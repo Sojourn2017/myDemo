@@ -1,0 +1,15 @@
+.setting-box {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 20px;
+    background-color: #fff;
+    border: 1px solid #007bff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;;
+    opacity: .9;
+}
+
+.person-info-box {
+     padding: 20px 10px;
+ }

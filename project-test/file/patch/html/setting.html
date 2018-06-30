@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杏林人脉网络</title>
+    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../../static/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="../../static/assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="../../static/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="../../static/assets/css/style.css">
+    <link rel="stylesheet" href="../css/setting.css">
+</head>
+
+<body>
+<div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href="#"><img src="../../static/assets/img/logo.png" style="height:37px;"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item" role="presentation" style="background-position:right;"><a class="nav-link active" href="#" style="background-position:right;">消息</a></li>
+                    <li class="nav-item" role="presentation" style="background-position:right;"><a class="nav-link" href="#" style="background-position:right;">设置</a></li>
+                </ul><span class="navbar-text actions"> <a href="#" class="login">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+        </div>
+    </nav>
+</div>
+<div style="background-color:#626262;">
+    <div class="justify-content-center" style="width:992px;margin-top:0px;margin-right:auto;margin-left:auto;text-align: center">
+        <ul class="list-inline" style="height:40px;margin-bottom:0px;width:auto;letter-spacing:0px;font-weight:bold;line-height:40px;font-size:18px;">
+            <a href="index.html"><li class="list-inline-item float-left" style="color:rgb(255,255,255);height:40px;line-height:40px;font-weight:bold;width:20%;margin-right:0;">首页</li></a>
+            <a href="searchmajor.html"><li class="list-inline-item float-left" style="line-height:40px;color:rgb(255,255,255);font-weight:bold;width:20%;margin-right:0px;">同专业</li></a>
+            <a href="searchpeople.html"><li class="list-inline-item float-left" style="color:rgb(255,255,255);line-height:40px;font-weight:bold;width:20%;margin-right:0;">同学</li></a>
+            <a href="searchjob.html"><li class="list-inline-item float-left" style="line-height:40px;font-weight:bold;color:rgb(255,255,255);width:20%;margin-right:0;">同行业</li></a>
+            <a href="search.html"><li class="list-inline-item float-left" style="color:rgb(255,255,255);line-height:40px;font-weight:bold;width:20%;">搜索</li></a>
+        </ul>
+    </div>
+</div>
+<div id="background" style="width:auto;height:675px;background-image:url('../../static/assets/img/background.jpg');background-size:contain;background-position: center center;background-repeat:no-repeat;">
+    <div style="width:992px;height:675px;margin-right:auto;margin-left:auto;">
+        <div class="setting-box">
+            <div id="pt" class="bm cl">
+                <div class="z">
+                    <a href="./setting.html">设置</a> <em> > </em>个人资料
+                </div>
+            </div>
+            <div id="ct" class="person-info-box">
+                <form id="person-info-form">
+                    <div class="form-group row">
+                        <label for="user-id" class="col-sm-2 col-form-label text-right" >用户ID：</label>
+                        <div class="col-sm-7">
+                            <input type="text" readonly class="form-control-plaintext" id="user-id" value="">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary col-sm-10 float-right" id="save-info" data-toggle="modal" data-target="#confirm-modal">保存</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-name" class="col-sm-2 col-form-label text-right">用户名：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-sex" class="col-sm-2 col-form-label text-right">性别：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-sex" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-age" class="col-sm-2 col-form-label text-right">年龄：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-age" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-mail" class="col-sm-2 col-form-label text-right">邮箱：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-mail" value="" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-school" class="col-sm-2 col-form-label text-right" >学校：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-school" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-major" class="col-sm-2 col-form-label text-right">专业：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-major" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-grade" class="col-sm-2 col-form-label text-right">年级：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-grade" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-class" class="col-sm-2 col-form-label text-right">班级：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-class" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-job" class="col-sm-2 col-form-label text-right">职业：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-job" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-company" class="col-sm-2 col-form-label text-right">单位：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-company" value="" autocomplete="organization">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="user-cha" class="col-sm-2 col-form-label text-right">职业：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user-cha" value="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-title">修改个人资料</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                确定要更改吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="save-person-info-change">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/assets/js/jquery.min.js"></script>
+<script src="../../static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/setting.js"></script>
+</body>
+
+</html>

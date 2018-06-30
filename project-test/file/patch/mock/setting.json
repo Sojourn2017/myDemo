@@ -1,0 +1,18 @@
+{
+  "status":1,
+  "msg":"",
+  "result":{
+    "id":"10001",
+    "name":"abc",
+    "sex":"男",
+    "age":"20",
+    "mail":"abdcefg@gmail.com",
+    "school":"广州中医药大学",
+    "major":"中医学",
+    "grade":"12",
+    "class":"10001",
+    "job":"医生",
+    "company":"省中医",
+    "cha":"主治医师"
+  }
+}

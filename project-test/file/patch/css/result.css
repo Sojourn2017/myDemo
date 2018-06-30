@@ -1,0 +1,106 @@
+.contact-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 20px;
+    background-color: #fff;
+    border: 1px solid #007bff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;;
+    opacity: .9;
+}
+
+.contact-body {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    margin:10px 0 10px 5px;
+    width: 935px;
+    height: 650px;
+}
+
+.contact-nav {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom: 0;
+    margin: 10px 5px 10px 5px;
+    width:20px;
+    height: 98%;
+}
+
+.contact-nav a {
+    position: relative;
+    display: block;
+    height: 3.82%;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    color: #495057;
+    text-align: center;
+    text-decoration:none;
+}
+
+.contact-nav a:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.contact-nav a:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.contact-nav a:hover {
+    color: #007bff;
+}
+
+.title {
+    height: 30px;
+    padding: 0.3rem 1.25rem;
+    margin-top: 5px;
+    color: #007bff;
+}
+
+.title:hover {
+    background-color: #fff;
+    color: #007bff;
+}
+
+.contact-body::-webkit-scrollbar,#chat-body::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+    background-color: #eee;
+}
+
+.chat-frame {
+    position: relative;
+    margin: 5px 10px;
+    width: 100%;
+}
+
+.chat-frame-user {
+    background-color: #eee;
+}
+
+#chat-body {
+    height:300px;
+    overflow: auto;
+}
+
+.chat-input {
+    float: left;
+    padding:20px 0;
+    width: 100%;
+}
+.chat-input input {
+    width: 100%;
+    height: 40px;
+}
+
+.chat-time {
+    border-bottom: 1px solid #eee;
+    color: #aaa;
+}
