@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>echarts-test</title>
+  <script src="./src/lib/echarts.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    #bar-graph, #pie-chart, #dynamic-bar-graph, #line-chart {
+      width: 800px;
+      height: 600px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 普通柱状图 -->
+  <div id="bar-graph"></div>
+  <!-- 饼图 -->
+  <div id="pie-chart"></div>
+  <!-- 动态生成数据的柱状图 + 线图 -->
+  <div id="dynamic-bar-graph"></div>
+
+  <!-- 线图 直接通过script引用echarts -->
+  <div id="line-chart""></div>
+
+  <script src="./build/bundle.js"></script>
+  <script src="./src/js/line-chart.js"></script>
+</body>
+
+</html>
