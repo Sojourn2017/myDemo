@@ -63,7 +63,8 @@ var option = {
     end: 100
   },
   grid: {
-    top: "15%"
+    top: '15%',
+    left: '15%'
   },
   // 直角坐标系 grid 中的 x 轴
   xAxis: [
@@ -100,7 +101,7 @@ var option = {
         }
         return res;
       })()
-    }
+    },
   ],
   // 直角坐标系 grid 中的 y 轴
   yAxis: [
@@ -182,7 +183,27 @@ var option = {
         return res;
       })()
     }
-  ]
+  ],
+  visualMap: {
+    type: 'piecewise',
+    seriesIndex: 1,
+    bottom: '10%',
+    pieces: [{
+      gt: 0,
+      lte: 5,
+      color: '#ffde33'
+    }, {
+      gt: 5,
+      lte: 10,
+      color: '#ff9933'
+    }, {
+      gt: 10,
+      color: '#660099'
+    }],
+    outOfRange: {
+      color: '#999'
+    }
+  }
 };
 
 // 首次绘制表格

@@ -1,0 +1,25 @@
+{
+  "name": "mydemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sojourn2017/myDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sojourn2017/myDemo/issues"
+  },
+  "homepage": "https://github.com/Sojourn2017/myDemo#readme"
+}

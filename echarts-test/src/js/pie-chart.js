@@ -40,7 +40,11 @@ myChart.setOption({
         lineStyle: {
           color: '#808080',
         }
-      }
+      },
+      hoverAnimation: true,
+      hoverOffset: 20,
+      selectedMode: 'multiple',
+      selectedOffset: 10,
     }
   ],
   visualMap: {
