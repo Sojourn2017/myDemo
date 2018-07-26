@@ -6,6 +6,8 @@
 
 ```cmd
 npm install
+
+npm start
 ```
 
 - Create a HTTP environment([http-server](https://www.npmjs.com/package/http-server))
