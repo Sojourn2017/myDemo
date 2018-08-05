@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>prototype-test</title>
+</head>
+
+<body>
+  <div id="div1">prototype test</div>
+
+  <script src="./sojourn.js"></script>
+  <script>
+    // 一秒钟后使用构造的方法改变dom元素
+    setTimeout(function () {
+      var div1 = $('#div1');
+      // 链式调用
+      div1.html().html('use Sojourn.js');
+
+      // 扩展插件
+      $.fn.getNodeName = function () {
+        alert(this[0].nodeName);
+      }
+
+      div1.getNodeName();
+    }, 1000);
+  </script>
+</body>
+
+</html>
