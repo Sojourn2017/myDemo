@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>action-view</title>
+  <style>
+    #action-chart {
+      width: 800px;
+      height: 600px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <script src="../lib/echarts.js"></script>
+  <script src="../lib/axios.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../lib/iview.css">
+  <script type="text/javascript" src="../lib/vue.min.js"></script>
+  <script type="text/javascript" src="../lib/iview.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+      <radio-group v-model="chart">
+        <radio label="销售量"></radio>
+        <radio label="销售额"></radio>
+        <radio label="TOTAL"></radio>
+      </radio-group>
+    <!-- echarts渲染容器 -->
+    <div id="action-chart"></div>
+  </div>
+  <script src="../js/action-view.js"></script>
+</body>
+
+</html>
