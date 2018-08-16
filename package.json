@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"
