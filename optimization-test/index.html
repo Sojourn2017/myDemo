@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Debounce&Throttle Test</title>
+  <style>
+    hr {
+      color: #808080;
+    }
+    button {
+      margin-left: 100px;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      background: #55aaff;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: #fff;
+      box-shadow: 1px 1px 2px 0px #55aaff;
+    }
+    button:focus {
+      opacity: .8;
+    }
+    button:active {
+      opacity: .5;
+    }
+  </style>
+</head>
+
+<body>
+  <p>监听keyup事件,每次触发立即执行事件</p>
+  <span>普通输入：</span><input type="text" id="normal-input">
+  <button id="normal-btn">普通按钮</button>
+  <br>
+  <hr>
+  <p>监听keyup事件,输入时间间隔超过指定时间后执行事件</p>
+  <span>防抖控制：</span><input type="text" id="debounce-input">
+  <button id="debounce-btn">防抖按钮</button>
+  <br>
+  <hr>
+  <p>监听keyup事件,无论输入时间间隔多短,都在指定时间后执行事件</p>
+  <span>节流控制：</span><input type="text" id="throttle-input">
+  <button id="throttle-btn">节流按钮</button>
+  <br>
+  <hr>
+
+  <script src="./debounce.js"></script>
+  <script src="./throttle.js"></script>
+  <script>
+    var ajax = function (content) {
+      setTimeout(function () {
+        console.log(content);
+      }, 0);
+    }
+    window.onload = function () {
+      // 普通输入框
+      var normalInput = document.getElementById('normal-input');
+      var debounceAjax = debounce(ajax, 1000);
+      normalInput.addEventListener('keyup', function (e) {
+        ajax(e.target.value);
+      });
+      // 普通按钮
+      var normalBtn = document.getElementById('normal-btn');
+      normalBtn.addEventListener('click', function (e) {
+        ajax(e.target.innerText);
+      })
+
+      // 防抖输入框
+      var debounceAjax = debounce(ajax, 500);
+      var debounceInput = document.getElementById('debounce-input');
+      debounceInput.addEventListener('keyup', function (e) {
+        debounceAjax(e.target.value);
+      })
+      // 防抖按钮
+      var debounceBtn = document.getElementById('debounce-btn');
+      debounceBtn.addEventListener('click', function (e) {
+        debounceAjax(e.target.innerText);
+      })
+
+      // 节流输入框
+      var throttleAjax = throttle(ajax, 1000);
+      var throttleInput = document.getElementById('throttle-input');
+      throttleInput.addEventListener('keyup', function (e) {
+        throttleAjax(e.target.value);
+      })
+      // 节流按钮
+      var throttleBtn = document.getElementById('throttle-btn');
+      throttleBtn.addEventListener('click', function (e) {
+        var obj = {};
+        throttleAjax.call(obj, e.target.innerText);
+      })
+    };
+  </script>
+</body>
+
+</html>
