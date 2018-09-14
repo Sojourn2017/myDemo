@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute negative margin</title>
+</head>
+  <style>
+    .wrapper {
+      width: 500px;
+      height: 500px;
+      background: #ccc;
+
+
+      position: relative;
+    }
+    .vertical-center {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      color: #808080;
+
+
+      position:absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <div class="vertical-center">使用绝对定位+margin: auto（已知宽高的子元素）</div>
+  </div>
+</body>
+</html>

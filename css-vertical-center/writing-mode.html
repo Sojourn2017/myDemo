@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute negative margin</title>
+</head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 500px;
+      height: 500px;
+      background: #ccc;
+
+      writing-mode: vertical-lr;
+      text-align: center;
+    }
+    .inner {
+      display: inline-block;
+      writing-mode: horizontal-tb;
+      text-align: center;
+      width: 100%;
+    }
+    .vertical-center {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      color: #808080;
+
+      display: inline-block;
+      text-align: initial;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <div class="inner">
+      <div class="vertical-center">辅助div + writing-mode（Firefox version > 38）</div>
+    </div>
+  </div>
+</body>
+</html>
