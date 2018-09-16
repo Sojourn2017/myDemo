@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h4>根元素<html>标签触发层叠上下文</h4>
+  <span>利用html根元素触发层叠上下文，文字在根元素背景色上方</span>
+  <pre>
+      &lt;style>
+        html {
+          <span style="color:red">background: #ccc;</span>
+        }
+      &lt;/style>
+      &lt;div style="position: relative;z-index: -1;">有html根元素时，触发触发层叠上下文，文字在背景色上方&lt;/div>  
+  </pre>
+  <style>
+    html {
+      background: #ccc;
+    }
+  </style>
+  <div style="position: relative;z-index: -1;">有html根元素时，触发触发层叠上下文，文字在背景色上方</div>
+  
+  <br>
+  <span>div未触发层叠上下文，文字被背景色遮盖</span>
+  <pre>
+    &lt;div style="<span style="color:red">background: #ccc;</span>width: 200px;height: 200px;">&lt;/div>
+    &lt;div style="position: absolute;z-index: -1;">父元素div未触发层叠上下文，文字被背景色遮盖，&lt;/div>
+  </pre>
+  <div style="background: #808080;width: 200px;height: 200px;"></div>
+  <div style="position: relative; top: -10px; z-index: -1;">父元素div未触发层叠上下文，文字被背景色遮盖，</div>
+</body>
+
+</html>
