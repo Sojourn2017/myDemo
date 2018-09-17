@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Print</title>
+  <style media="print">
+    .no-print {
+      display: none;
+    }
+      .print-page {
+        display: block !important;
+      }
+    
+  </style>
+</head>
+
+<body>
+  <div class="no-print">
+    other things...
+    <div>6666
+      <ul>
+        <li>888</li>
+        <li>888</li>
+      </ul>
+      <span>77777</span>
+    </div>
+  </div>
+  <br>
+  <button id='print-btn' class="print-page">打印</button>
+  <br>
+  <section style="width: 100%;display: none;" id="print" class="print-page">
+    <div id="printBlock" style="border: 1px solid #000000;margin: 0 auto">
+      <div style="border-bottom: 1px solid #000;padding: 5px 0;">
+        <div style="text-align: center;font-size: 22px;font-weight: bolder;">{{printclinicName}}</div>
+        <div style="text-align: center;font-size: 18px;" class="print-page">挂号单</div>
+      </div>
+      <div style="border-bottom: 1px solid #000;padding: 10px 5px 0;font-size: 14px;">
+        <div style="margin-bottom: 10px;">科室：{{printData.roomCode}}</div>
+        <div style="margin-bottom: 10px;">医生姓名：{{printData.doctorName}}</div>
+        <div style="margin-bottom: 10px;">挂号时间：{{printData.createTime|YYYY-MM-DD}} <span style="padding-left: 5px;">{{printData.createTime|HH-MM-SS}}</span></div>
+      </div>
+      <div style="border-bottom: 1px solid #000;padding: 10px 5px 0;font-size: 14px;" class="print-page">
+        <div style="margin-bottom: 10px;">患者姓名：{{printData.patientName}}</div>
+        <div style="margin-bottom: 10px;">排队号：</div>
+        <div style="margin-bottom: 10px;">诊金：{{printData.amountReceivable}}元</div>
+        <div style="margin-bottom: 10px;">实收金额：{{printData.amountReceivable}}元</div>
+      </div>
+      <section style="padding: 10px 5px 0;font-size: 14px;">
+        备注：挂号当日有效，过期作废！
+        <div style="text-align: center;">
+          <img :src="imgData" style="width: 160px;">
+        </div>
+      </section>
+    </div>
+  </section>
+  <script>
+    window.onload = function () {
+      var btn = document.getElementById('print-btn');
+      btn.addEventListener('click', function (e) {
+        console.log(btn.innerText);
+        window.print()
+      })
+    }
+  </script>
+</body>
+
+</html>
