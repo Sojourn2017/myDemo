@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stacking Level</title>
+
+  <style>
+    .stacking-level {
+      width: 500px;
+      height: 500px;
+      font-size: 16px;
+      position: relative;
+    }
+    .negative-z-index {
+      width: 500px;
+      height: 500px;
+      background: rgb(255, 100, 100);
+      z-index: -10;
+      position: absolute;
+      top: -1.5em;
+    }
+
+    .normal-div {
+      width: 450px;
+      height: 450px;
+      background: rgb(100, 100, 255);
+    }
+
+    .float-div {
+      width: 400px;
+      height: 400px;
+      background: rgb(100, 255, 100);
+      position: static;
+      float: left;
+    }
+
+    .inline-block {
+      width: 350px;
+      height: 350px;
+      background: rgb(50, 100, 200);
+      display: inline-block;
+      position:absolute;
+      top: 3.0em;
+    }
+
+    .zero-z-index {
+      z-index: 0;
+      width: 300px;
+      height: 300px;
+      background: rgb(200, 100, 50);
+      position:absolute;
+      top: 4.5em;
+    }
+
+    .positive-z-index {
+      z-index: 10;
+      width: 250px;
+      height: 250px;
+      background: rgb(100, 200, 50);
+      position: absolute;
+      top: 6em;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    <h2>层叠水平顺序:</h2>
+    <ol>
+      <li>形成堆叠上下文环境的元素的背景与边框.</li>
+      <li>拥有负 z-index 的子堆叠上下文元素 （z-index的值越小层级越低）.</li>
+      <li>正常流式布局，非 inline-block，无 position 定位（除了static）的子元素.</li>
+      <li>无 position 定位（static除外）的 float 浮动元素.</li>
+      <li>正常流式布局， inline-block元素，无 position 定位（除了static）的子元素（包括 inline-table 和 inline-block）.</li>
+      <li>拥有 z-index:0 的子堆叠上下文元素.</li>
+      <li>拥有正 z-index: 的子堆叠上下文元素（z-index的值越小层级越低）.</li>
+    </ol>
+  </p>
+  <br>
+  <br>
+  <div class="stacking-level">
+    <div class="normal-div">
+      <div class="negative-z-index">负 z-index</div>
+      正常流式布局<br>
+      <div class="inline-block">inline-block元素</div>
+      <div class="float-div">无position定位（static除外）浮动元素</div>
+      <div class="zero-z-index">z-index:0</div>
+      <div class="positive-z-index">正 z-index</div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

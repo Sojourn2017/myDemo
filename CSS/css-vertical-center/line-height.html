@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute negative margin</title>
+</head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 500px;
+      height: 500px;
+      background: #ccc;
+
+      line-height: 500px;
+      text-align: center;
+    }
+    .vertical-center {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      color: #808080;
+
+
+      display: inline-block;
+      vertical-align: middle;
+      line-height: initial;
+      text-align: initial;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <div class="vertical-center">使用line-height+vertical-align（子元素block变inline-block,子元素内部如需添加内容需要重置line-height与text-align）</div>
+  </div>
+</body>
+</html>

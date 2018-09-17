@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute negative margin</title>
+</head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 500px;
+      height: 500px;
+      background: #ccc;
+
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .vertical-center {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      color: #808080;
+
+      display: inline-block;
+      text-align: initial;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <div class="vertical-center">使用table-cell, 设置text-align 与 vertical-align(子元素inline-block && 重置text-align)</div>
+  </div>
+</body>
+</html>

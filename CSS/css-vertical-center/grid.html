@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute negative margin</title>
+</head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 500px;
+      height: 500px;
+      background: #ccc;
+
+      display: grid;
+    }
+    .vertical-center {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      color: #808080;
+
+
+      align-self: center;
+      justify-self: center;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <div class="vertical-center">使用grid(IE > 9 && Firefox > 51 && chrome > 56 && Safari > 10 && Opera >= 53 && iOS Safari > 10.2 && Android > 5)</div>
+  </div>
+</body>
+</html>

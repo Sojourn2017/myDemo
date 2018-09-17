@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h4>一个 z-index 值不为 "auto"的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，</h4>
+  <span>div触发层叠上下文，文字被背景色遮盖</span>
+  <pre>
+      &lt;div <span style="color:red">style="display: flex;"</span>>
+      &nbsp;&nbsp;&lt;div style="background: #ccc;width: 200px;height: 200px;z-index: -2;">
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="position: absolute;z-index: -1;">触发触发层叠上下文，文字在背景色上方</div>
+      &nbsp;&nbsp;&lt;/div>
+      &lt;/div>
+  </pre>
+  <div style="display: flex;">
+    <div style="background: #ccc;width: 200px;height: 200px;z-index: -2;">
+      <div style="position: absolute;z-index: -1;">触发触发层叠上下文，文字在背景色上方</div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <span>div未触发层叠上下文，文字被背景色遮盖</span>
+  <pre>
+      &lt;div>
+      &nbsp;&nbsp;&lt;div style="background: #ccc;width: 200px;height: 200px;z-index: -2;">
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;div style="position: absolute;z-index: -1;">触发触发层叠上下文，文字在背景色上方</div>
+      &nbsp;&nbsp;&lt;/div>
+      &lt;/div>
+  </pre>
+  <div>
+    <div style="background: #ccc;width: 200px;height: 200px;z-index: -2;">
+      <div style="position: absolute;z-index: -1;">div未触发层叠上下文，文字被背景色遮盖方</div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -579,3 +579,70 @@ body>* {
     box-shadow: 0 -2em 0 0 #333;
   }
 }
+
+/* 水平三点,伪类自动添加3点 */
+.loading-three-point-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.loading-three-point-word::after {
+  display: inline-block;
+  vertical-align: bottom;
+  content: '...';
+  width: 3ch;
+  text-indent: 0ch;
+  animation: loading-three-point-word 3s infinite step-start both;
+  font-family: Consolas, Monaco, monospace;
+  overflow: hidden;
+}
+
+@keyframes loading-three-point-word {
+  0%, 100% {
+    text-indent: 0ch;
+  }
+  33% {
+    text-indent: -2ch;
+  }
+  66% {
+    text-indent: -1ch;
+  }
+}
+
+/* 水平三点,需自行添加3点 */
+.loading-three-point-word2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: Consolas, Monaco, monospace;
+  background-color: inherit;
+}
+.loading-three-point-word2::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+  animation: loading-three-point-word2 3s infinite step-start both;
+  background-color: inherit;
+  z-index: 10;
+}
+
+@keyframes loading-three-point-word2 {
+  0%, 100% {
+    width: 0;
+  }
+  33% {
+    width: 2ch;
+  }
+  66% {
+    width: 1ch;
+  }
+}
