@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stacking-Content</title>
+</head>
+<body>
+  <h1>层叠上下文</h1>
+  <p>
+    <strong>文档中的层叠上下文由满足以下任意一个条件的元素形成：</strong>
+    <br>
+    <ul>
+      <li><a href="./root-html.html">根元素 (HTML)</a></li>
+      <li><a href="./z-index-position.html">z-index 值不为 "auto"的 绝对/相对定位</a></li>
+      <li><a href="./flex-z-index.html">一个 z-index 值不为 "auto"的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex</a></li>
+      <li><a href="./opacity.html">opacity 属性值小于 1 的元素</a></li>
+      <li><a href="./transform.html">transform 属性值不为 "none"的元素</a></li>
+      <li><a href="./mix-blend-mode.html">mix-blend-mode 属性值不为 "normal"的元素</a></li>
+      <li><a href="./filter.html">filter值不为“none”的元素</a></li>
+      <li><a href="./perspective.html">perspective值不为“none”的元素</a></li>
+      <li><a href="./isolation.html">isolation 属性被设置为 "isolate"的元素</a></li>
+      <li><a href="./position-fixed.html">position: fixed</a></li>
+      <li><a href="./will-change.html">在 will-change 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值</a></li>
+      <li><a href="./-webkit-overflow-scrolling.html">-webkit-overflow-scrolling 属性被设置 "touch"的元素</a></li>
+    </ul>
+  </p>
+
+</body>
+</html>
