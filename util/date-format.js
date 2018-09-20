@@ -49,33 +49,33 @@ Date.prototype.Format = function (fmt) {
  * @example
  * 
  */
-function isLegal(dateStr, ltNow) {
-  if (dateStr == null) return false;
-  dateStr = dateStr.toString();
-  ltNow = ltNow != null ? ltNow : true;
-  var date = new Date();
-  var yyyy = dateStr.substr(0, 4);
-  var MM = dateStr.substr(4, 2);
-  var dd = dateStr.substr(6, 2);
-  var regArr = [/(\d{4})/,/(0[1-9]|1[0-2])/,/[0-2][1-9]|10|20|30|31/];
-  var flag = yyyy
-    ? (/(\d{4})/.test(yyyy)
-        ? (/(0[1-9]|1[0-2])/.test(MM)
-            ? (/[0-2][1-9]|10|20|30|31/.test(dd)
-                ? true
-                : false)
-            : false)
-        : false)
-    : false;
-  if (yyyy) {
-    if (!/(\d{4})/.test(yyyy)) {
-      return false
-    } else {
-      if (!/(0[1-9]|1[0-2])/.test(MM)) {
+// function isLegal(dateStr, ltNow) {
+//   if (dateStr == null) return false;
+//   dateStr = dateStr.toString();
+//   ltNow = ltNow != null ? ltNow : true;
+//   var date = new Date();
+//   var yyyy = dateStr.substr(0, 4);
+//   var MM = dateStr.substr(4, 2);
+//   var dd = dateStr.substr(6, 2);
+//   var regArr = [/(\d{4})/,/(0[1-9]|1[0-2])/,/[0-2][1-9]|10|20|30|31/];
+//   var flag = yyyy
+//     ? (/(\d{4})/.test(yyyy)
+//         ? (/(0[1-9]|1[0-2])/.test(MM)
+//             ? (/[0-2][1-9]|10|20|30|31/.test(dd)
+//                 ? true
+//                 : false)
+//             : false)
+//         : false)
+//     : false;
+//   if (yyyy) {
+//     if (!/(\d{4})/.test(yyyy)) {
+//       return false
+//     } else {
+//       if (!/(0[1-9]|1[0-2])/.test(MM)) {
 
-      }
-    }
-  }
+//       }
+//     }
+//   }
 
   // var flag1 = false,
   //   flag2 = false,
@@ -92,6 +92,6 @@ function isLegal(dateStr, ltNow) {
   //     }
   //   }
   // }
-}
+// }
 
 module.exports = {};

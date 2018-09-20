@@ -13,3 +13,7 @@ function isIp(str) {
 // export {
 //   checkIp as checkIp
 // }
+
+module.exports = {
+  isIp: isIp
+}

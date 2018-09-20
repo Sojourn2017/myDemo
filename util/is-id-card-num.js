@@ -24,3 +24,7 @@ function isIdNum(str) {
 // export {
 //   isIdNum as isIdNum
 // }
+
+module.exports = {
+  isIdNum: isIdNum
+}

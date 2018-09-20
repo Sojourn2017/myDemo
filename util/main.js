@@ -1,13 +1,7 @@
-require('./date-format.js');
+var p = require('./is-phone-num.js');
 
-var p = require('./price-format.js');
+console.log(p.isMoblie('13329407998'));
 
-console.log(p);
+console.log(p.isMoblie('1332940799'));
 
-var date = new Date('1996-12-14');
-
-var d = date.Format('yyyyMMdd');
-
-console.log(d);
-
-console.log(p.priceFormat('123456.7890'));
+console.log(p.isTel('13329407991345'))
