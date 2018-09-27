@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>broadcast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="broadcast">
+    <ul class="left-1 transition" id="scroll-img-group">
+      <li><img src="./3.jpg"></li>
+      <li><img src="./1.jpg"></li>
+      <li><img src="./2.jpg"></li>
+      <li><img src="./3.jpg"></li>
+      <li><img src="./1.jpg"></li>
+    </ul>
+    <div class="last" id="last-btn">
+      <div class="last-icon"></div>
+    </div>
+    <div class="next" id="next-btn">
+      <div class="next-icon"></div>
+    </div>
+    <div class="point-group" id="point-group">
+      <span class="cur-point">●</span>
+      <span>●</span>
+      <span>●</span>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      addEvent();
+    }
+
+    function addEvent() {
+      var imgUl = document.getElementById('scroll-img-group');
+      var pointGroup = document.getElementById('point-group').children;
+      var last = document.getElementById('last-btn');
+      var next = document.getElementById('next-btn');
+      var index = 1;
+      // 自动轮播器
+      var timer = null;
+      startScroll();
+
+      function startScroll() {
+        timer = setTimeout(function () {
+          if (index >= 3) {
+            index = 0;
+            imgUl.setAttribute('class', 'left-' + index);
+          }
+          setTimeout(function () {
+            imgUl.setAttribute('class', 'left-' + ++index + ' transition');
+            curPoint('right');
+            return startScroll();
+          }, 0)
+        }, 3000)
+      };
+
+      function curPoint(type) {
+        if (type == 'left') {
+          var i = (index - 1) < 0 ? 2 : index - 1;
+          pointGroup[i < 2 ? i + 1 : 0].setAttribute('class', '');
+          pointGroup[i].setAttribute('class', 'cur-point');
+        } else if (type == 'right') {
+          var i = index - 1;
+          pointGroup[i > 0 ? i - 1 : 2].setAttribute('class', '');
+          pointGroup[i].setAttribute('class', 'cur-point');
+        }
+      }
+
+      // 点击事件
+      last.addEventListener('click', function () {
+        clearTimeout(timer);
+        if (index <= 0) {
+          index = 3;
+          imgUl.setAttribute('class', 'left-' + index);
+          console.log()
+        }
+        setTimeout(function () {
+          imgUl.setAttribute('class', 'left-' + --index + ' transition');
+          curPoint('left');
+          startScroll();
+        }, 0)
+      })
+      next.addEventListener('click', function () {
+        clearTimeout(timer);
+        if (index >= 3) {
+          index = 0;
+          imgUl.setAttribute('class', 'left-' + index);
+        }
+        setTimeout(function () {
+          imgUl.setAttribute('class', 'left-' + ++index + ' transition');
+          curPoint('right');
+          startScroll();
+        }, 0)
+      })
+      for (var i = 0; i < 3; i++) {
+        (function (i) {
+          pointGroup[i].addEventListener('click', function () {
+            clearTimeout(timer);
+            pointGroup[(index - 1) < 0 ? 2 : index - 1].setAttribute('class', '');
+            pointGroup[i].setAttribute('class', 'cur-point');
+            index = i + 1;
+            imgUl.setAttribute('class', 'left-' + index);
+            startScroll();
+          })
+        })(i)
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+.broadcast {
+  width: 520px;
+  height: 280px;
+  overflow: hidden;
+  position: absolute;
+  background: #ccc;
+}
+
+.broadcast ul {
+  list-style: none;
+  width: 2500px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* animation:move 10s linear 0s infinite normal;  */
+  position: relative;
+  z-index: 11;
+}
+
+.transition {
+  transition: all 1s;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.left-1 {
+  left: -100%;
+}
+
+.left-2 {
+  left: -200%;
+}
+
+.left-3 {
+  left: -300%;
+}
+
+.left-4 {
+  left: -400%;
+}
+
+.broadcast ul:hover {
+  z-index: 9;
+}
+
+.broadcast ul li {
+  float: left;
+}
+
+.broadcast ul li img {
+  width: 520px;
+  height: 280px;
+}
+
+@keyframes move {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: -1560px;
+  }
+}
+
+.next, .last {
+  background: rgba(200, 200, 200, .5);
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  z-index: 10;
+  opacity: .5;
+  transition: all 0.5s;
+}
+
+.next:hover, .last:hover {
+  z-index: 12;
+  opacity: .8;
+}
+
+.last:active, .next:active {
+  opacity: .5;
+}
+
+.last {
+  left: 0;
+  top: calc(50% - 50px);
+}
+
+.next {
+  right: 0;
+  top: calc(50% - 50px);
+}
+
+.last-icon, .next-icon {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border-left: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  position: relative;
+  top: calc(50% - 20px);
+  border-radius: 5px;
+}
+
+.last-icon {
+  transform: rotate(45deg);
+  left: 15px;
+}
+
+.next-icon {
+  transform: rotate(-135deg);
+  right: 5px;
+}
+
+.point-group {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  color: rgba(200, 200, 200, .5);
+  z-index: 20;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  cursor: default;
+}
+
+.point-group span {
+  cursor: pointer;
+}
+
+.cur-point {
+  color: #fff;
+}
