@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  width: 4rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  line-height: 2rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a:hover {
+  opacity: .8;
+}
+a:active {
+  opacity: .5;
+}
+
+.content {
+  width: 600px;
+  height: 400px;
+  background: #eee;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

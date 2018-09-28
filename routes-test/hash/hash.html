@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="./hash-router.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>基于hash的前端路由</h1>
+  <p>
+    <h3>载入不同的页面的三种方式:</h3>
+    <ul>
+      <li><span>寻找节点内容并改变 --------------------------------- (首页)</span></li>
+      <li><span>import一个JS文件,文件内部export模版字符串 ------ (页面1)</span></li>
+      <li><span>利用AJAX加载对应的 HTML 模版 ------------------- (页面2)</span></li>
+    </ul>
+  </p>
+  <div>
+    <nav class="title">
+      <a class="route" href="#/home">首页</a>
+      <a class="route" href="#/content">页面1</a>
+      <a class="route" href="#/another-content">页面2</a>
+    </nav>
+    <section class="content" id="content">
+
+    </section>
+  </div>
+  <br>
+  <br>
+  <a href="../index.html" style="font-size: 16px;"><返回</a>
+  <script type="module">
+    import content1 from '../static/content1.js'
+    var content = document.querySelector('#content');
+    HashRouter.route('/home', function () {
+      content.innerHTML = "<h3>这是首页,寻找节点内容并改变</h3>";
+    });
+    HashRouter.route('/content', function () {
+      content.innerHTML = '<h3>' + content1 + '</h3>';
+    });
+    HashRouter.route('/another-content', function () {
+      $.ajax({
+        url: '../static/content2.html',
+      }).then(function (res) {
+        var pat = /\<script\>(.*?)<\/script\>/gm;
+        var str =  res.toString().replace(/\r|\n|\\s/gm, "");
+        var r = pat.exec(str);
+        while(r != null) {
+          eval(r[1]);
+          r = pat.exec(str);
+        }
+        content.innerHTML = res;
+      })
+    });
+  </script>
+</body>
+
+</html>

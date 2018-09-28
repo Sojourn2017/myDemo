@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ROUTERS-TEST</title>
+</head>
+
+<body>
+  <div>
+    <h1>前端路由简易实现</h1>
+    <ul>
+      <li><a href="./hash/hash.html">使用location.hash实现</a></li>
+      <li><a href="./history/history.html">使用location.history实现</a></li>
+    </ul>
+    <hr style="border: none;border-top:1px solid #ddd;" />
+    <p style="background: #eee">
+      <h2>前端路由</h2>
+      <pre>
+        根据不同的 url 地址展示不同的内容或页面
+        将路由管理交给浏览器去做
+        只改变需要改变部分的页面内容
+        用户体验好，不需要每次都从服务器获取整个页面，快速展现给用户
+        适用于单页应用(SPA)
+    </pre>
+    </p>
+    <hr style="border: none;border-top:1px solid #ddd;" />
+    <p>
+      <h2>两种方式的区别</h2>
+      <pre>
+        兼容性:
+        hash: IE8+; 
+        history: IE10+
+      </pre>
+      <pre>
+        url样式:
+        hash: 基于location.hash,使用锚点(#)定位,看起来有些奇怪.
+        history: 基于location.history,格式与正常url一样,颜值高.
+      </pre>
+      <pre>
+        使用差异:
+        hash: 锚点后的路由内容不会返回到服务器, 对后端而言, 即使没有做到对路由的全覆盖, 也不会返回 404 错误。
+        history: 前端的url必须和实际向后端发起请求的url一致, 因此服务器需要对url做好相应的配置
+      </pre>
+    </p>
+  </div>
+</body>
+
+</html>
