@@ -33,7 +33,9 @@
 
     // 初始化
     init: function () {
+      // 页面加载时触发refresh
       window.addEventListener('load', this.refresh.bind(this), false);
+      // hash事件改变时触发refresh
       window.addEventListener('hashchange', this.refresh.bind(this), false);
     }
   }
