@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>同源策略限制</h1>
+  <p>
+    A.html与B.html同源的情况下，B可以拿到A页面输入的密码;
+    在非同源的情况下则拿不到
+  </p>
+  <iframe name="a" src="http://localhost:50003"></iframe>
+
+  <script>
+    window.onload = function () {
+      var iframe = window.frames['a'];
+      var node = iframe.document.getElementById('pwd');
+      node.addEventListener("input", function () {
+        console.log(`拿到了密码： ${this.value}`);
+      })
+    }
+  </script>
+</body>
+
+</html>
