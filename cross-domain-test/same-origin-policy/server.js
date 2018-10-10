@@ -5,7 +5,6 @@ const url = require('url');
 const server = http.createServer((req, res) => {
   let pathName = url.parse(req.url).pathname;
   let p = './' + (pathName[1] ? pathName : 'A.html');
-  console.log(p);
   fs.readFile(p, (err, data) => {
     if (err) {
       res.writeHead(404, {

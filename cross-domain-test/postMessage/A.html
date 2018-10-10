@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>postMessage A</title>
+</head>
+
+<body>
+  <h1>postMessage与iframe配合使用跨域</h1>
+  <pre>
+      otherWindow.postMessage(message, targetOrigin);
+      otherWindow:指目标窗口，也就是给哪个window发消息，是 window.frames 属性的成员或者由 window.open 方法创建的窗口
+      message:是要发送的消息，类型为 String、Object (IE8、9 不支持)
+      targetOrigin: 是限定消息接收范围，不限制请使用'*'
+      注意otherWindow和targetOrigin的区别
+  </pre>
+  <hr style="border-top: 1px solid #ccc">
+  <h2>获取不同域页面B中的值</h2>
+  <iframe id="frame" src="http://localhost:50008/b.html" onload="load()"></iframe>
+  <script>
+    function load() {
+      let frame = document.getElementById('frame');
+      frame.contentWindow.postMessage('这里是页面A', 'http://localhost:50008');
+      window.onmessage = function (e) {
+        console.log('(页面A)接收到页面B发来的信息： ',e.data);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSONP跨域</title>
+</head>
+
+<body>
+  <h1>JSONP跨域</h1>
+  <p>
+    当前域为：<span id="cur-domain"></span>
+    <br>
+    <br>
+    请求接口域为： <span id="req-domain"></span>
+    <br>
+    <br>
+    同域请求数据： <span id="same-domain"></span>
+    <br>
+    <br>
+    直接跨域请求数据： <span id="direct-res"></span>
+    <br>
+    <br>
+    JSONP跨域请求结果： <span id="cross-res"></span>
+    <br>
+    <br>
+  </p>
+
+  <script>
+    function queryDom(selectors) {
+      return document.querySelectorAll(selectors);
+    }
+    let doms = {
+      cur: '#cur-domain',
+      req: '#req-domain',
+      same: '#same-domain',
+      direct: '#direct-res',
+      corss: '#cross-res'
+    }
+
+    // 获取当前域名
+    const CUR_DOMAIN = /(.*?\/\/.*?)\//.exec(location.href) ? RegExp.$1 : '';
+    queryDom(doms.cur)[0].innerText = CUR_DOMAIN;
+
+    // 请求接口域
+    const REQ_DOMAIN = 'http://localhost:50005/'
+    queryDom(doms.req)[0].innerText = REQ_DOMAIN.slice(0, -1);
+
+    // 定义请求参数
+    let params = {
+      a: 1,
+      b: 2,
+      c: 3
+    }
+
+    // 直接请求
+    let getData = (url, data, method, success) => {
+      let ajax = new XMLHttpRequest();
+      if (method == 'get') {
+        // get请求
+        let handleData = (data) => {
+          let keys = Object.keys(data);
+          return keys.reduce(
+            (total, cur) => {
+              return `${total}${cur}=${data[cur]}&`
+            }, ''
+          ).slice(0, -1);
+        }
+        // 设置 方法 以及 url
+        ajax.open(method, `${url}?${data ? handleData(data) : ''}`);
+
+        // 发送数据
+        ajax.send();
+      } else {
+        // post请求
+
+        ajax.open(method, url);
+        // 需要设置请求报文
+        ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        // 判断data send发送数据
+        data ? ajax.send(data) : ajax.send();
+      }
+      console.log(ajax)
+
+      // 注册事件
+      ajax.onreadystatechange = function () {
+        // 成功后执行success
+        if (ajax.readyState == 4 && ajax.status == 200) {
+          success(ajax.responseText);
+        }
+        if (ajax.readyState == 4 && ajax.status == 0) {
+          queryDom(doms.direct)[0].innerHTML = '<span style="color:red;">Failed to load data.</span>';
+        }
+      }
+    }
+    // getData同域请求数据
+    getData(
+      CUR_DOMAIN+'/data.json',
+      {},
+      'get',
+      success = (res) => {
+        queryDom(doms.same)[0].innerHTML = `<span style="color:green;">${res}</span>`;
+      }
+    )
+
+    // getData跨域请求数据
+    getData(
+      REQ_DOMAIN,
+      params,
+      'get',
+      success = (res) => {
+        queryDom(doms.direct)[0].innerHTML = `<span style="color:green;">${res}</span>`;
+      }
+    )
+
+    // JSONP跨域请求
+    let jsonp = ({
+      url,
+      data
+    }) => {
+      return new Promise((resolve, reject) => {
+        let handleData = (data) => {
+          let keys = Object.keys(data);
+          return keys.reduce(
+            (total, cur) => {
+              return `${total}${cur}=${data[cur]}&`
+            }, ''
+          ).slice(0, -1);
+        }
+
+        // 创建script标签
+        let script = document.createElement('script');
+
+        // 定义callback
+        window.jsonpCb = (res) => {
+          // 请求完成后删除该script标签与回调函数并resolve
+          document.body.removeChild(script);
+          delete window.jsonpCb;
+          resolve(res);
+        }
+
+        // add src
+        script.src = `${url}?${data ? handleData(data) : ''}&cb=jsonpCb`;
+
+        // append script
+        document.body.appendChild(script);
+      })
+    }
+
+    jsonp({
+      url: REQ_DOMAIN,
+      data: params
+    }).then((res) => {
+      queryDom(doms.corss)[0].innerHTML = `<span style="color:green;">${JSON.stringify(res)}</span>`;
+    })
+  </script>
+</body>
+
+</html>

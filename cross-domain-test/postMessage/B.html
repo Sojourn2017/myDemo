@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>postMessage B</title>
+</head>
+
+<body>
+  <h3>这里是页面B</h3>
+  <input type="password" name="pwd" id="pwd" placeholder="请输入密码...">
+  <script>
+    var pwd = document.getElementById('pwd');
+
+    //data:消息
+    //origin:消息来源地址
+    //source:源DOMWindow 对象
+    window.onmessage = function (e) {
+      console.log('(页面B)接收到页面A发来的信息： ', e.data);
+      e.source.postMessage('这里是页面B', e.origin);
+      pwd.addEventListener('input', function (element) {
+        e.source.postMessage('输入的密码为 ' + element.target.value, e.origin);
+      })
+    }
+  </script>
+</body>
+
+</html>
