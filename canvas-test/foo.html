@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .span {
+        display: inline-block;
+        vertical-align: middle;
+        font: normal normal normal 14px/1 "weui";
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+      }
+      .span::after {
+        display: block;
+        content: "\EA08";
+        color: #09bb07;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="cv1" width="800px" height="600px"> 不支持canvas！ </canvas>
+
+    <script>
+      var canvas = document.querySelector("#cv1");
+      var ctx = canvas.getContext("2d");
+
+      var baseWidth = 50;
+      var clearWidth = 35;
+      var childWidth = 25;
+
+      for (var i = 0; i < 6; i++) {
+        for (var j = 0; j < 6; j++) {
+          var a = Math.floor(255 - 42.5 * (6 - i));
+          var b = Math.floor(255 - 42.5 * (6 - j));
+          var c = Math.floor(255 - 42.5 * j);
+          ctx.fillStyle = `rgba(${a}, ${b}, ${c}, .8)`;
+          ctx.fillRect(j * baseWidth, i * baseWidth, baseWidth, baseWidth);
+
+          if (i % 2 == 0 && j % 2 == 0) {
+            ctx.clearRect(
+              j * baseWidth + baseWidth - clearWidth,
+              i * baseWidth + baseWidth - clearWidth,
+              clearWidth,
+              clearWidth
+            );
+
+            ctx.strokeStyle = `rgba(${c}, ${b}, ${a}, .8)`;
+            ctx.strokeRect(
+              j * baseWidth + baseWidth - childWidth,
+              i * baseWidth + baseWidth - childWidth,
+              childWidth,
+              childWidth
+            );
+          } else if (i % 2 == 0 && j % 2 == 1) {
+            ctx.clearRect(
+              j * baseWidth,
+              i * baseWidth + baseWidth - clearWidth,
+              clearWidth,
+              clearWidth
+            );
+
+            ctx.strokeStyle = `rgba(${c}, ${b}, ${a}, .8)`;
+            ctx.strokeRect(
+              j * baseWidth,
+              i * baseWidth + baseWidth - childWidth,
+              childWidth,
+              childWidth
+            );
+          } else if (i % 2 == 1 && j % 2 == 0) {
+            ctx.clearRect(
+              j * baseWidth + baseWidth - clearWidth,
+              i * baseWidth,
+              clearWidth,
+              clearWidth
+            );
+
+            ctx.strokeStyle = `rgba(${c}, ${b}, ${a}, .8)`;
+            ctx.strokeRect(
+              j * baseWidth + baseWidth - childWidth,
+              i * baseWidth,
+              childWidth,
+              childWidth
+            );
+          } else {
+            ctx.clearRect(j * baseWidth, i * baseWidth, clearWidth, clearWidth);
+
+            ctx.strokeStyle = `rgb(${c}, ${b}, ${a}, .8)`;
+            ctx.strokeRect(
+              j * baseWidth,
+              i * baseWidth,
+              childWidth,
+              childWidth
+            );
+          }
+        }
+      }
+
+      for (var i = 1; i < 11; i += 4) {
+        for (var j = 1; j < 11; j += 4) {
+          ctx.fillStyle = `rgba(${15 * i % 255}, ${Math.abs(255 - 15 * j) % 255}, 200, 1)`;
+          ctx.fillRect(
+            (j * baseWidth) / 2 + (baseWidth - childWidth) / 2,
+            (i * baseWidth) / 2 + (baseWidth - childWidth) / 2,
+            childWidth,
+            childWidth
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
