@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>color</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400px" height="400px"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        addGlobalAlpha("#canvas");
+        drawFillStyle("#canvas");
+        drawStrokeStyle("#canvas");
+      };
+
+      let base = 15;
+
+      // globalAlpha
+      function addGlobalAlpha(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          let [posX, posY] = [144, 144];
+          let r = 20;
+
+          ctx.globalAlpha = 0.2;
+          ctx.fillStyle = "rgb(255, 200, 150)";
+
+          for (let i = 0; i < 6; i++) {
+            ctx.beginPath();
+            ctx.arc(posX, posY, r * i + 30, 0, Math.PI * 2, true);
+            ctx.fill();
+          }
+          
+          ctx.globalAlpha = 1.0;
+        }
+      }
+
+      // fillStyle
+      function drawFillStyle(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          let r = 10;
+
+          for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+              ctx.fillStyle =
+                "rgb(0," +
+                Math.floor(255 - 42.5 * i) +
+                "," +
+                Math.floor(255 - 42.5 * j) +
+                ")";
+              ctx.beginPath();
+              ctx.arc(
+                2 * base + j * 3 * base,
+                2 * base + i * 3 * base,
+                r,
+                0,
+                Math.PI * 2,
+                true
+              );
+              ctx.fill();
+            }
+          }
+        }
+      }
+
+      // strokeStyle
+      function drawStrokeStyle(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          let r = 14;
+
+          for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+              ctx.strokeStyle =
+                "rgb(0," +
+                Math.floor(255 - 42.5 * i) +
+                "," +
+                Math.floor(255 - 42.5 * j) +
+                ")";
+              ctx.beginPath();
+              ctx.arc(
+                2 * base + j * 3 * base,
+                2 * base + i * 3 * base,
+                1.4 * r,
+                0,
+                Math.PI * 2,
+                true
+              );
+              ctx.stroke();
+
+              ctx.strokeStyle =
+                "rgb(0," +
+                Math.floor(42.5 * i) +
+                "," +
+                Math.floor(42.5 * j) +
+                ")";
+              ctx.beginPath();
+              ctx.arc(
+                2 * base + j * 3 * base,
+                2 * base + i * 3 * base,
+                r,
+                0,
+                Math.PI * 2,
+                true
+              );
+              ctx.stroke();
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

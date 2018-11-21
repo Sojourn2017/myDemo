@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bezier</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800px" height="600px">no support canvas</canvas>
+
+    <script>
+      window.onload = function() {
+        drawMsgBox("#canvas", "rgba(255, 140, 105, 1)", 100, 100, 200, 200, 30);
+        drawHeart("#canvas", "rgba(240, 60, 15, 1)", 170, 160, 160, 160);
+      };
+
+      function drawMsgBox(
+        id,
+        color = "rgba(255, 140, 105, 1)",
+        posX = 75,
+        posY = 50,
+        msgWidth = 250,
+        msgHeight = msgWidth,
+        control = Math.floor(msgWidth / 10)
+      ) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          // 初始化数据
+          let [x, y, w, h] = [posX, posY, msgWidth, msgHeight];
+          let r = 3 * control < w ? control : Math.floor(w / 4);
+          let [wl, hl] = [w - 2 * r, h - 2 * r];
+          let ts = 6 * r < w ? r : Math.floor(w / 6);
+
+          console.log(w, h, wl, hl, r, ts);
+          // 二次贝塞尔曲线
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.quadraticCurveTo((x = x - r), y, x, (y = y + r));
+          ctx.lineTo(x, (y = y + hl));
+          ctx.quadraticCurveTo(x, (y = y + r), (x = x + r), y);
+          ctx.lineTo((x = x + ts), y);
+          ctx.quadraticCurveTo(x, (y = y + ts), (x = x - ts), y);
+          ctx.quadraticCurveTo((x = x + ts), y, (x = x + ts), (y = y - ts));
+          ctx.lineTo((x = x + wl - 2 * ts), y);
+          ctx.quadraticCurveTo((x = x + r), y, x, (y = y - r));
+          ctx.lineTo(x, (y = y - hl));
+          ctx.quadraticCurveTo(x, (y = y - r), (x = x - r), y);
+          ctx.closePath();
+          ctx.strokeStyle = color;
+          ctx.stroke();
+        }
+      }
+
+      function drawHeart(
+        id,
+        color = "rgba(240, 60, 15, 1)",
+        posX = 175,
+        posY = 130,
+        itemWidth = 160,
+        itemHeight = msgWidth,
+        itemSize = Math.floor(itemWidth / 4),
+        itemOffset = Math.floor(itemWidth / 8)
+      ) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          // 三次贝塞尔曲线
+          let [x, y] = [posX, posY];
+          let [w, h, size, offset] = [
+            itemWidth,
+            itemHeight,
+            itemSize,
+            itemOffset
+          ];
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.bezierCurveTo(
+            x,
+            y - offset,
+            (x = x - size) + offset,
+            (y = y - size),
+            x,
+            y
+          );
+          ctx.bezierCurveTo(
+            x - offset,
+            y,
+            (x = x - size),
+            (y = y + size) - offset,
+            x,
+            y
+          );
+          ctx.bezierCurveTo(
+            x,
+            y + 2 * offset,
+            (x = x + 2 * size) - 2 * offset,
+            (y = y + h - size) - 2 * offset,
+            x,
+            y
+          );
+          ctx.bezierCurveTo(
+            x + 2 * offset,
+            y - 2 * offset,
+            (x = x + 2 * size),
+            (y = y - h + size) + 2 * offset,
+            x,
+            y
+          );
+          ctx.bezierCurveTo(
+            x,
+            y - offset,
+            (x = x - size) + offset,
+            (y = y - size),
+            x,
+            y
+          );
+          ctx.bezierCurveTo(
+            x - offset,
+            y,
+            (x = x - size),
+            (y = y + size) - offset,
+            x,
+            y
+          );
+          ctx.fillStyle = color;
+          ctx.fill();
+        }
+      }
+    </script>
+  </body>
+</html>
