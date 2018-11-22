@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LineStyle</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400px" height="400px"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        draw("#canvas");
+      };
+      function draw(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          ctx.beginPath();
+          ctx.moveTo(200, 10);
+          ctx.lineTo(300, 10);
+
+          ctx.moveTo(200, 90);
+          ctx.lineTo(300, 90);
+          ctx.strokeStyle = "rgba(0, 200, 200, .8)";
+          ctx.stroke();
+
+          ctx.strokeStyle = "#000";
+
+          for (let i = 1; i < 10; i++) {
+
+            // lineWidth
+            ctx.lineWidth = i;
+            ctx.beginPath();
+            ctx.lineCap = 'butt';
+            ctx.moveTo(5 + i * 10, 10);
+            ctx.lineTo(5 + i * 10, 100);
+            ctx.stroke();
+
+            // lineCap
+            ctx.beginPath();
+            let lineCap = ["butt", "round", "square"];
+            ctx.lineCap = lineCap[i % 3];
+            ctx.moveTo(200 + i * 10, 10);
+            ctx.lineTo(200 + i * 10, 90);
+            ctx.stroke();
+
+            // lineJoin
+            ctx.beginPath();
+            let lineJoin = ['round', 'bevel', 'miter'];
+            ctx.lineJoin = lineJoin[i % 3];
+            ctx.moveTo()
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

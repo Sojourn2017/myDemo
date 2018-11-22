@@ -34,14 +34,14 @@
           let r = 20;
 
           ctx.globalAlpha = 0.2;
-          ctx.fillStyle = "rgb(255, 200, 150)";
+          ctx.fillStyle = "rgb(255, 200, 255)";
 
           for (let i = 0; i < 6; i++) {
             ctx.beginPath();
             ctx.arc(posX, posY, r * i + 30, 0, Math.PI * 2, true);
             ctx.fill();
           }
-          
+
           ctx.globalAlpha = 1.0;
         }
       }
