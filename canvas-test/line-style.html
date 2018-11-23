@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <canvas id="canvas" width="400px" height="400px"> 不支持canvas！ </canvas>
+    <canvas id="canvas" width="400px" height="800px"> 不支持canvas！ </canvas>
 
     <script>
       window.onload = function() {
@@ -25,40 +25,112 @@
           var ctx = canvas.getContext("2d");
 
           ctx.beginPath();
-          ctx.moveTo(200, 10);
-          ctx.lineTo(300, 10);
+          ctx.moveTo(200, 30);
+          ctx.lineTo(300, 30);
 
-          ctx.moveTo(200, 90);
-          ctx.lineTo(300, 90);
+          ctx.moveTo(200, 100);
+          ctx.lineTo(300, 100);
           ctx.strokeStyle = "rgba(0, 200, 200, .8)";
           ctx.stroke();
 
           ctx.strokeStyle = "#000";
 
           for (let i = 1; i < 10; i++) {
-
             // lineWidth
+            i == 1 && ctx.strokeText("lineWidth", 15, 15, 90);
             ctx.lineWidth = i;
             ctx.beginPath();
-            ctx.lineCap = 'butt';
-            ctx.moveTo(5 + i * 10, 10);
+            ctx.lineCap = "butt";
+            ctx.moveTo(5 + i * 10, 20);
             ctx.lineTo(5 + i * 10, 100);
             ctx.stroke();
 
             // lineCap
+            i == 1 &&
+              ctx.strokeText('lineCap ["butt", "round", "square"]', 210, 15);
             ctx.beginPath();
+            ctx.lineWidth = i;
             let lineCap = ["butt", "round", "square"];
             ctx.lineCap = lineCap[i % 3];
-            ctx.moveTo(200 + i * 10, 10);
-            ctx.lineTo(200 + i * 10, 90);
+            ctx.moveTo(200 + i * 10, 30);
+            ctx.lineTo(200 + i * 10, 100);
+            ctx.stroke();
+          }
+
+          for (let i = 0; i < 3; i++) {
+            // lineJoin
+            ctx.lineWidth = 1;
+            i == 0 &&
+              ctx.strokeText(`lineJoin ['round', 'bevel', 'miter']`, 15, 130);
+            ctx.beginPath();
+            ctx.lineWidth = 8;
+            let lineJoin = ["round", "bevel", "miter"];
+            ctx.lineJoin = lineJoin[i % 3];
+            ctx.moveTo(15, 160 + 20 * i);
+            ctx.lineTo(35, 140 + 20 * i);
+            ctx.lineTo(55, 160 + 20 * i);
+            ctx.lineTo(75, 140 + 20 * i);
+            ctx.lineTo(95, 160 + 20 * i);
+            ctx.lineTo(115, 140 + 20 * i);
+            ctx.lineTo(135, 160 + 20 * i);
             ctx.stroke();
 
-            // lineJoin
-            ctx.beginPath();
-            let lineJoin = ['round', 'bevel', 'miter'];
-            ctx.lineJoin = lineJoin[i % 3];
-            ctx.moveTo()
+            // miterLimit
+            if (i == 2) {
+              ctx.lineWidth = 1;
+              ctx.strokeText(`miterLimit 50`, 210, 130);
+              ctx.lineWidth = 5;
+              ctx.lineJoin = "miter";
+              ctx.miterLimit = 50;
+              let pre = 210;
+              ctx.moveTo(pre, 160);
+              for (let j = 1; j < 36; j += 4) {
+                ctx.lineTo((pre = pre + Math.abs(j - 18)), 180);
+                ctx.lineTo((pre = pre + Math.abs(j - 18)), 160);
+              }
+              ctx.stroke();
+            }
           }
+
+          // dash
+          let offset = 0;
+          ctx.lineWidth = 1;
+          ctx.strokeText(`setLineDash: [4, 2]`, 15, 255);
+          (function march() {
+            offset--;
+            if (offset < -16) {
+              offset = 0;
+            }
+            ctx.clearRect(14, 264, 102, 102);
+            ctx.setLineDash([4, 2]);
+            ctx.lineDashOffset = offset;
+            ctx.strokeRect(15, 265, 100, 100);
+            setTimeout(march, 20);
+          })(offset);
+
+          // Gradients
+          ctx.setLineDash([0, 0]);
+          ctx.strokeText(`LinearGradient`, 210, 255);
+          let linearGradient = ctx.createLinearGradient(200, 265, 400, 265);
+          linearGradient.addColorStop(0, "#fff");
+          linearGradient.addColorStop(0.5, "rgb(255, 200, 150)");
+          linearGradient.addColorStop(0.5, "rgb(150, 200, 255)");
+          linearGradient.addColorStop(1, "#fff");
+          ctx.fillStyle = linearGradient;
+          ctx.fillRect(210, 265, 180, 100);
+
+          ctx.setLineDash([0, 0]);
+          ctx.beginPath();
+          ctx.strokeText(`RadialGradient`, 210, 255);
+          let radialGradient = ctx.createRadialGradient(65, 450, 50, 80, 435, 0);
+          radialGradient.addColorStop(0, "rgb(255, 255, 255)"); 
+          radialGradient.addColorStop(0, "rgb(150, 200, 255)");      
+          radialGradient.addColorStop(1, "rgb(255, 255, 255)");
+          ctx.fillStyle = radialGradient;
+          ctx.fillRect(15, 400, 100, 100);
+
+          // Patterns
+          
         }
       }
     </script>
