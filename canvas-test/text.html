@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Text</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1600px" height="800px"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        draw("#canvas");
+      };
+      function draw(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+
+          ctx.save();
+          ctx.fillStyle = 'rgba(255, 200, 200, .2)';
+          ctx.rect(0, 0, 1600, 800);
+          ctx.fill();
+          ctx.restore();
+          
+          // font
+          ctx.font = 'bold 50px/60px Arial'
+          ctx.fillText(`font: 'bold 50px/60px Arial' `, 20, 100);
+
+          // textAlign
+          ctx.font = 'normal 30px/40px Arial'
+          ctx.textAlign = 'end';
+          ctx.fillText(`'end'`, 1600, 200);
+          ctx.textAlign = 'start';
+          ctx.fillText(`textAlign: 'start'`, 20, 200);
+
+          // 基线
+          ctx.strokeStyle = 'rgba(100, 100, 100, .5)';
+          ctx.beginPath();
+          ctx.moveTo(0, 260);
+          ctx.lineTo(1600, 260);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, 280);
+          ctx.lineTo(1600, 280);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, 300);
+          ctx.lineTo(1600, 300);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, 320);
+          ctx.lineTo(1600, 320);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(0, 340);
+          ctx.lineTo(1600, 340);
+          ctx.stroke();
+          ctx.restore();
+
+          // baseLine
+          ctx.font = 'normal 60px/80px Arial'
+          ctx.fillText('textBaseline: ', 20, 320, 400);
+          ctx.textBaseline = 'top';
+          ctx.fillText(`'top'`, 420, 320, 180);
+          ctx.textBaseline = 'hanging';
+          ctx.fillText(`'hanging'`, 620, 320, 180);
+          ctx.textBaseline = 'middle';
+          ctx.fillText(`'middle'`, 820, 320, 180);
+          ctx.textBaseline = 'ideographic';
+          ctx.fillText(`'ideographic'`, 1020, 320, 180);
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(`'bottom'`, 1220, 320, 180);
+          ctx.textBaseline = 'alphabetic';
+          ctx.fillText(`'alphabetic'`, 1420, 320, 180);
+
+          // direction
+          ctx.direction = 'rtl';
+          ctx.fillText(`direction: 'rtl'`, 20, 450);
+
+          ctx.direction = 'ltr';
+          ctx.fillText(`direction: 'ltr'`, 20, 550);
+
+          // 预测量文本宽度
+          var text = ctx.measureText("foo"); // TextMetrics object
+          ctx.fillText(`'foo'的宽度： ${text.width}`, 20, 650);
+        }
+      }
+    </script>
+  </body>
+</html>

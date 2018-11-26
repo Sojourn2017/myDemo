@@ -25,6 +25,9 @@
           var ctx = canvas.getContext("2d");
 
           ctx.beginPath();
+
+          ctx.save();
+
           ctx.moveTo(200, 30);
           ctx.lineTo(300, 30);
 
@@ -109,6 +112,7 @@
           })(offset);
 
           // Gradients
+          ctx.beginPath();
           ctx.setLineDash([0, 0]);
           ctx.strokeText(`LinearGradient`, 210, 255);
           let linearGradient = ctx.createLinearGradient(200, 265, 400, 265);
@@ -118,19 +122,72 @@
           linearGradient.addColorStop(1, "#fff");
           ctx.fillStyle = linearGradient;
           ctx.fillRect(210, 265, 180, 100);
+          ctx.closePath();
 
-          ctx.setLineDash([0, 0]);
           ctx.beginPath();
+          ctx.setLineDash([0, 0]);
           ctx.strokeText(`RadialGradient`, 210, 255);
-          let radialGradient = ctx.createRadialGradient(65, 450, 50, 80, 435, 0);
-          radialGradient.addColorStop(0, "rgb(255, 255, 255)"); 
-          radialGradient.addColorStop(0, "rgb(150, 200, 255)");      
+          let radialGradient = ctx.createRadialGradient(
+            65,
+            450,
+            50,
+            80,
+            435,
+            0
+          );
+          radialGradient.addColorStop(0, "rgb(255, 255, 255)");
+          radialGradient.addColorStop(0, "rgb(150, 200, 255)");
           radialGradient.addColorStop(1, "rgb(255, 255, 255)");
           ctx.fillStyle = radialGradient;
           ctx.fillRect(15, 400, 100, 100);
+          ctx.closePath();
 
           // Patterns
-          
+          let img = new Image();
+          img.src = "./bg.jpg";
+          img.onload = function() {
+            ctx.beginPath();
+            let ptrn = ctx.createPattern(img, "repeat");
+            ctx.fillStyle = ptrn;
+            ctx.fillRect(210, 400, 180, 100);
+            ctx.closePath();
+          };
+
+          // shadows
+          let drawShadow = (canvasContext, offsetX, offsetY, blur, color) => {
+            canvasContext.shadowOffsetX = offsetX;
+            canvasContext.shadowOffsetY = offsetY;
+            canvasContext.shadowBlur = blur;
+            canvasContext.shadowColor = color;
+          };
+          ctx.beginPath();
+          ctx.font = "50px Times New Roman";
+          ctx.fillStyle = "black";
+          drawShadow(ctx, 5, 5, 5, "rgb(150, 200, 255)");
+          ctx.fillText("Text with shadow", 15, 560);
+          ctx.closePath();
+          ctx.restore();
+
+          //  winding rule
+          ctx.beginPath();
+          ctx.strokeText(`winding rule: evenodd`, 15, 610);
+          ctx.arc(50, 650, 30, 0, Math.PI * 2, true);
+          ctx.rect(50, 650, 30, 30);
+          ctx.rect(20, 620, 30, 30);
+          ctx.arc(50, 650, 10, 0, Math.PI * 2, true);
+          ctx.fillStyle = 'rgb(150, 200, 255)'
+          ctx.fill("evenodd");
+          ctx.closePath()
+
+          ctx.beginPath();
+          ctx.strokeText(`winding rule: nonzero`, 210, 610);
+          ctx.arc(250, 650, 30, 0, Math.PI * 2, true);
+          ctx.rect(250, 650, 30, 30);
+          ctx.rect(220, 620, 30, 30);
+          ctx.arc(250, 650, 15, 0, Math.PI * 2, true);
+          ctx.fillStyle = 'rgb(150, 200, 255)'
+          ctx.fill("nonzero");
+          ctx.closePath()
         }
       }
     </script>
