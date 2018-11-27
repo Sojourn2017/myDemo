@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LineStyle</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400px" height="800px"> 不支持canvas！ </canvas>
+    <canvas id="canvas_2" width="400px" height="400px"> 不支持canvas！ </canvas>
+    <script>
+      window.onload = function() {
+        draw("#canvas");
+        drawTran("#canvas_2");
+      };
+      function draw(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          ctx.save();
+
+          // 移动 Translating
+          for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+              ctx.save();
+              ctx.fillStyle =
+                "rgb(" + 51 * i + ", " + (255 - 51 * i) + ", 255)";
+              ctx.translate(10 + j * 50, 10 + i * 50);
+              ctx.fillRect(0, 0, 25, 25);
+              ctx.restore();
+            }
+          }
+
+          // 旋转 Rotating
+          ctx.translate(100, 250);
+
+          for (var i = 1; i < 6; i++) {
+            ctx.save();
+            ctx.fillStyle = "rgb(" + 51 * i + "," + (255 - 51 * i) + ",255)";
+
+            for (var j = 0; j < i * 6; j++) {
+              // draw individual dots
+              ctx.rotate((Math.PI * 2) / (i * 6));
+              ctx.beginPath();
+              ctx.arc(0, i * 12.5, 5, 0, Math.PI * 2, true);
+              ctx.fill();
+            }
+
+            ctx.restore();
+          }
+
+          // 缩放 Scaling
+          ctx.translate(-60, 100);
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(0, 0, 20, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.restore();
+
+          ctx.translate(40, 0);
+          ctx.save();
+          ctx.beginPath();
+          ctx.scale(0.5, 0.5); // 缩小
+          ctx.arc(0, 0, 20, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.restore();
+
+          // 变形 TransformsEdit
+          ctx.translate(-40, 100);
+          ctx.save();
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(255, 200, 155, .5)'
+          ctx.arc(0, 0, 20, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.restore();
+
+          ctx.translate(60, 0);
+          ctx.save();
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(200, 200, 200, .5)';
+          ctx.fillRect(-20, -20, 40, 40)
+          ctx.fillStyle = 'rgba(255, 200, 155, .5)'
+          ctx.transform(1, 4, -4, 1, 0, 0)
+          ctx.arc(0, 0, 20, 0, Math.PI * 2, true);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      function drawTran(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          ctx.save();
+
+          ctx.translate(200, 200);
+
+          for (let i = 1; i < 5; i++) {
+            ctx.save();
+            ctx.rotate((Math.PI * 2) / 4 * i);
+            for (let j = 0; j < 4; j++) {
+              for (let k = 0; k < 4; k++) {
+                ctx.save();
+                ctx.fillStyle = `rgba(${Math.floor(255 * Math.random())}, ${Math.floor(255 * Math.random())}, ${Math.floor(255 * Math.random())}, .1)`;             
+                ctx.translate(j * 50, k * 50);
+                ctx.fillRect(0, 0, 50, 50);
+                ctx.restore();
+
+                ctx.save();
+                ctx.fillStyle = `rgb(${40 * k}, ${40 * j}, 255)`;
+                ctx.translate(10 + j * 50, 10 + k * 50);
+                ctx.scale(1 - Math.random(), 1 - Math.random());
+                ctx.beginPath()
+                ctx.arc(15, 15, 12.5, 0, Math.PI * 2, true);
+                ctx.fill();
+                ctx.restore();
+              }
+            }
+            ctx.fill();
+            ctx.restore();
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

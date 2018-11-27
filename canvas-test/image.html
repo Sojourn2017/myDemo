@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IMAGE</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800px" height="800px"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        draw("#canvas");
+      };
+      function draw(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          ctx.save();
+
+          let img_1 = new Image();
+          img_1.src = "./bg.jpg";
+
+          let img_2 = new Image();
+          img_2.src = "./2.png";
+
+          img_1.onload = function() {
+            ctx.drawImage(img_1, 0, 0, 200, 120);
+            ctx.beginPath();
+            ctx.moveTo(30, 96);
+            ctx.lineTo(70, 66);
+            ctx.lineTo(103, 76);
+            ctx.lineTo(170, 15);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(30, 10);
+            ctx.lineTo(27, 10);
+            ctx.lineTo(30, 6);
+            ctx.lineTo(33, 10);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.moveTo(30, 10);
+            ctx.lineTo(30, 100);
+            ctx.lineTo(180, 100);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(180, 100);
+            ctx.lineTo(180, 97);
+            ctx.lineTo(184, 100)
+            ctx.lineTo(180, 103);
+            ctx.closePath();
+            ctx.fill();
+
+            // 切片 Slicing
+            img_2.onload = function () {
+              ctx.beginPath();
+              ctx.fillStyle = ctx.createPattern(img_1, 'repeat');
+              ctx.shadowOffsetX = 5;
+              ctx.shadowOffsetY = 5;
+              ctx.shadowBlur = 5;
+              ctx.shadowColor = 'rgb(200, 200, 200)'
+              ctx.fillRect(30, 230, 240, 290);
+              ctx.clearRect(50,250,200,250);
+              ctx.closePath();
+              ctx.restore();
+
+              ctx.drawImage(img_2, 50, 250, 200, 250);
+            }
+          };
+        
+          
+        }
+      }
+    </script>
+  </body>
+</html>

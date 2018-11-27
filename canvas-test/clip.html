@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>LineStyle</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="400px" height="800px"> 不支持canvas！ </canvas>
+    <script>
+      window.onload = function() {
+        draw("#canvas");
+      };
+      function draw(id) {
+        var canvas = document.querySelectorAll(id)[0];
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          ctx.save();
+
+          let img = new Image();
+          img.src = "./2.png";
+
+          let cos36 = (sin54 = Math.cos(Math.PI / 5));
+          let sin36 = (cos54 = Math.sin(Math.PI / 5));
+          let cos18 = (sin72 = Math.cos(Math.PI / 10));
+          let sin18 = (cos72 = Math.sin(Math.PI / 10));
+
+          img.onload = function() {
+            let [x, y, l] = [180, 20, 90];
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, (y = y + l));
+            ctx.lineTo((x = x + l * cos18), (y = y + l * sin18));
+            ctx.lineTo((x = x - l * cos18), (y = y + l * sin18));
+            ctx.lineTo(x, y = y + l);
+            ctx.lineTo(x = x - l * sin36, y = y - l * cos36);
+            ctx.lineTo(x = x - l * cos18, y = y + l * sin18);
+            ctx.lineTo(x = x + l * sin36, y = y - l * cos36);
+            ctx.lineTo(x = x - l * sin36, y = y - l * cos36);
+            ctx.lineTo(x = x + l * cos18, y = y + l * sin18);
+            ctx.closePath();
+            ctx.clip();
+            ctx.drawImage(img, 20, 20);
+            ctx.restore();
+          };
+        }
+      }
+    </script>
+  </body>
+</html>
