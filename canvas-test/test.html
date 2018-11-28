@@ -18,11 +18,14 @@
       window.onload = function() {
         drawStar("#canvas");
       };
-
       function drawStar(id) {
         var canvas = document.querySelectorAll(id)[0];
         if (canvas.getContext) {
           var ctx = canvas.getContext("2d");
+          ctx.save();
+
+          let img = new Image();
+          img.src = "./2.png";
 
           let cos36 = (sin54 = Math.cos(Math.PI / 5));
           let sin36 = (cos54 = Math.sin(Math.PI / 5));
@@ -32,11 +35,6 @@
           let center = [x - (l * sin18 * sin54) / cos54, y + (l + l * sin18)];
           let [offsetX, offsetY] = [center[0] - w / 2, center[1] - h / 2];
 
-          ctx.save();
-
-          let img = new Image();
-          img.src = "./2.png";
-
           img.onload = function() {
             (function rotateStar() {
               angle += Math.PI / 360;
@@ -45,14 +43,9 @@
               }
 
               ctx.save();
-
-              // 清空区域
+              
+              // 清空
               ctx.clearRect(0, 0, offsetX + w, offsetY + h);
-
-              ctx.save();
-              ctx.globalAlpha = 0.2;
-              ctx.drawImage(img, offsetX, offsetY, w, h);
-              ctx.restore();
 
               // 旋转
               ctx.translate(offsetX + w / 2, offsetY + h / 2);
@@ -60,7 +53,6 @@
               ctx.translate(-(offsetX + w / 2), -(offsetY + h / 2));
 
               // 五角星
-              ctx.save();
               ctx.beginPath();
               ctx.moveTo(x, y);
               ctx.lineTo(x, (y = y + l));
@@ -75,47 +67,25 @@
               ctx.lineTo((x = x + l * sin36), (y = y - l * cos36));
               ctx.closePath();
               ctx.clip();
-              ctx.globalAlpha = 1;
-
-              // 反向旋转
-              ctx.translate(offsetX + w / 2, offsetY + h / 2);
-              ctx.rotate(-angle);
-              ctx.translate(-(offsetX + w / 2), -(offsetY + h / 2));
               ctx.drawImage(img, offsetX, offsetY, w, h);
               ctx.restore();
-
-              ctx.globalCompositeOperation = "xor";
 
               // 圆
               ctx.beginPath();
               ctx.arc(
                 center[0],
                 center[1],
-                (l + l * sin18) / cos18 - 50,
+                (l + l * sin18) / cos18,
                 0,
                 Math.PI * 2,
                 true
               );
-              ctx.lineWidth = 1;
-              ctx.strokeStyle = "rgb(255, 70, 0)";
+              ctx.strokeStyle = "rgb(255, 40, 40)";
               ctx.stroke();
 
-              ctx.beginPath();
-              ctx.arc(
-                center[0],
-                center[1],
-                (l + l * sin18) / cos18 - 49,
-                0,
-                Math.PI * 2,
-                true
-              );
-              ctx.fillStyle = "rgb(255, 255, 255)";
-              ctx.globalAlpha = 0.7;
-              ctx.fill();
-
               ctx.restore();
-
-              window.requestAnimationFrame(rotateStar);
+               
+              window.requestAnimationFrame(rotateStar)
             })();
           };
         }
