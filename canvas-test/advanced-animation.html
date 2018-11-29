@@ -8,7 +8,6 @@
   </head>
   <body>
     <canvas id="canvas" width="800" height="400"> 不支持canvas！ </canvas>
-    <canvas id="drop-ball" width="800" height="400"> 不支持canvas！ </canvas>
 
     <script>
       window.onload = function() {
@@ -24,39 +23,9 @@
 
         canvas.addEventListener("mouseout", function(e) {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ball.draw(ctx);
           window.cancelAnimationFrame(raf);
+          ball.draw(ctx);
         });
-
-        // 自由落体小球
-        canvas_2 = document.querySelector("#drop-ball");
-        ctx_2 = canvas_2.getContext("2d");
-        dropping = false;
-        dropBall();
-
-        canvas_2.addEventListener("mousemove", function(e) {
-          if (!dropping) {
-            clearCtx_2();
-            ball_2.x = e.clientX - canvas_2.offsetLeft;
-            ball_2.y = e.clientY - canvas_2.offsetTop;
-            ball_2.draw(ctx_2);
-          }
-        });
-
-        canvas_2.addEventListener("click", function(e) {
-          if (!dropping) {
-            raf = window.requestAnimationFrame(dropBall);
-            dropping = true;
-          }
-        });
-
-        canvas_2.addEventListener("mouseout", function(e) {
-          clearCtx_2();
-          window.cancelAnimationFrame(raf_2);
-          dropping = false;
-        });
-
-        ball_2.draw(ctx_2);
       };
       var ball = {
         x: 100,
@@ -97,52 +66,6 @@
         ball.draw(ctx);
         ctx.restore();
         raf = window.requestAnimationFrame(draw);
-      }
-
-      // 小球2
-      var ball_2 = {
-        x: 100,
-        y: 100,
-        vy: 0,
-        radius: 25,
-        color: "blue",
-        draw: function(ctx) {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
-          ctx.closePath();
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        }
-      };
-
-      function clearCtx_2() {
-        ctx_2.clearRect(0, 0, canvas_2.width, canvas_2.height);
-        ball_2.draw(ctx_2);
-      }
-
-      function dropBall() {
-        if (
-          ball.y + ball.vy > canvas.height - ball.radius ||
-          ball.y + ball.vy - ball.radius < ball.y
-        ) {
-          ball.vy = -ball.vy;
-        }
-        ball.x += ball.vx;
-        ball.y += ball.vy;
-
-        ctx.save();
-
-        ctx.fillStyle = "rgba(255,255,255,0.2)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ball.draw(ctx);
-        ctx.restore();
-
-        raf_2 = window.requestAnimationFrame(dropBall);
-
-        if (ball.y + ball.vy - ball.radius < --ball.y) {
-          window.cancelAnimationFrame(raf_2);
-        }
       }
     </script>
   </body>

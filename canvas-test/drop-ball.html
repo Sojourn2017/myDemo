@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="drop-ball" width="400" height="800"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        // 自由落体小球
+        canvas = document.querySelector("#drop-ball");
+        ctx = canvas.getContext("2d");
+        dropping = false;
+        raf = null;
+        dropBall();
+
+        canvas.addEventListener("mousemove", function(e) {
+          if (!dropping) {
+            clearCtx();
+            ball.x = e.clientX - canvas.offsetLeft;
+            ball.y = e.clientY - canvas.offsetTop;
+            ball.draw(ctx);
+          }
+        });
+
+        canvas.addEventListener("click", function(e) {
+          if (!dropping) {
+            raf = window.requestAnimationFrame(dropBall);
+            ball.dropY = e.clientY - canvas.offsetTop;
+            dropping = true;
+          }
+        });
+
+        canvas.addEventListener("mouseout", function(e) {
+          clearCtx();
+          window.cancelAnimationFrame(raf);
+          ball.dropY = 0;
+          dropping = false;
+        });
+
+        ball.draw(ctx);
+      };
+      // 小球2
+      var ball = {
+        x: 100,
+        y: 100,
+        vy: 0,
+        dropY: 0,
+        dropTime: 0,
+        preTime: 0,
+        radius: 25,
+        status: "down",
+        color: "blue",
+        draw: function(ctx) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      };
+
+      function clearCtx() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ball.draw(ctx);
+      }
+
+      function dropBall() {
+        if (ball.y + ball.vy + ball.radius > canvas.height) {
+          ball.vy = -ball.vy;
+          ball.status = "up";
+        }
+        if (ball.y + ball.vy < ball.dropY) {
+          ball.status = "down";
+          ball.dropTime = Date.now();
+        }
+        ball.y += ball.vy;
+
+        ctx.save();
+
+        ctx.fillStyle = "rgba(255,255,255,1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ball.draw(ctx);
+        ctx.restore();
+
+        if (dropping) {
+          let t = Date.now();
+          if (ball.dropTime) {
+            if (ball.status == "down") {
+              ball.vy =
+                ((((t - ball.dropTime) / 1000) ** 2 -
+                  ((ball.preTime - ball.dropTime) / 1000) ** 2) /
+                  2) *
+                9.8 *
+                20;
+            } else if (ball.status == "up") {
+              ball.vy =
+                ((((ball.preTime - ball.dropTime) / 1000) ** 2 -
+                  ((t - ball.dropTime) / 1000) ** 2) /
+                  2) *
+                9.8 *
+                20;
+            }
+          } else {
+            ball.dropTime = t;
+          }
+          ball.preTime = t;
+          raf = window.requestAnimationFrame(dropBall);
+        } else {
+          ball.vy = 0;
+          ball.dropTime = 0;
+        }
+        console.log(ball.vy);
+      }
+    </script>
+  </body>
+</html>
