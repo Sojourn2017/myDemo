@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
-    <canvas id="drop-ball" width="400" height="800"> 不支持canvas！ </canvas>
+    <canvas id="drop-ball" width="375" height="800"> 不支持canvas！ </canvas>
 
     <script>
       window.onload = function() {
-        // 自由落体小球
+        // 下落小球
         canvas = document.querySelector("#drop-ball");
         ctx = canvas.getContext("2d");
-        dropping = false;
         raf = null;
         dropBall();
 
         canvas.addEventListener("mousemove", function(e) {
-          if (!dropping) {
+          if (!ball.dropping) {
             clearCtx();
             ball.x = e.clientX - canvas.offsetLeft;
             ball.y = e.clientY - canvas.offsetTop;
@@ -28,18 +33,16 @@
         });
 
         canvas.addEventListener("click", function(e) {
-          if (!dropping) {
-            raf = window.requestAnimationFrame(dropBall);
+          if (!ball.dropping) {
             ball.dropY = e.clientY - canvas.offsetTop;
-            dropping = true;
+            ball.dropping = true;
+            raf = window.requestAnimationFrame(dropBall);
           }
         });
 
         canvas.addEventListener("mouseout", function(e) {
           clearCtx();
           window.cancelAnimationFrame(raf);
-          ball.dropY = 0;
-          dropping = false;
         });
 
         ball.draw(ctx);
@@ -48,12 +51,16 @@
       var ball = {
         x: 100,
         y: 100,
-        vy: 0,
         dropY: 0,
+        v: 0,
+        d: 0,
+        g: 9.8,
+        a: 0.5,
+        dropping: false,
         dropTime: 0,
         preTime: 0,
         radius: 25,
-        status: "down",
+        status: "fall",
         color: "blue",
         draw: function(ctx) {
           ctx.beginPath();
@@ -61,61 +68,70 @@
           ctx.closePath();
           ctx.fillStyle = this.color;
           ctx.fill();
+        },
+        reset: function() {
+          Object.assign(this, {
+            x: 100,
+            y: 100,
+            dropY: 0,
+            v: 0,
+            d: 0,
+            g: 9.8,
+            a: 0.5,
+            dropping: false,
+            dropTime: 0,
+            preTime: 0,
+            radius: 25,
+            status: "fall",
+            color: "blue"
+          });
         }
       };
 
       function clearCtx() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ball.draw(ctx);
+        ball.reset();
       }
 
       function dropBall() {
-        if (ball.y + ball.vy + ball.radius > canvas.height) {
-          ball.vy = -ball.vy;
-          ball.status = "up";
+        let now = Date.now() / 1000;
+        if (ball.y + ball.d + ball.radius > canvas.height) {
+          ball.status = "rise";
+          ball.g = -Math.abs(ball.g);
+          console.log(ball.v);
+          if (Math.abs(ball.v) < 0.1) ball.dropping = false;
         }
-        if (ball.y + ball.vy < ball.dropY) {
-          ball.status = "down";
-          ball.dropTime = Date.now();
+        if (ball.v < 0) {
+          ball.status = "fall";
+          ball.g = Math.abs(ball.g);
         }
-        ball.y += ball.vy;
-
-        ctx.save();
-
-        ctx.fillStyle = "rgba(255,255,255,1)";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ball.draw(ctx);
-        ctx.restore();
-
-        if (dropping) {
-          let t = Date.now();
-          if (ball.dropTime) {
-            if (ball.status == "down") {
-              ball.vy =
-                ((((t - ball.dropTime) / 1000) ** 2 -
-                  ((ball.preTime - ball.dropTime) / 1000) ** 2) /
-                  2) *
-                9.8 *
-                20;
-            } else if (ball.status == "up") {
-              ball.vy =
-                ((((ball.preTime - ball.dropTime) / 1000) ** 2 -
-                  ((t - ball.dropTime) / 1000) ** 2) /
-                  2) *
-                9.8 *
-                20;
-            }
+        if (ball.dropping) {
+          if (!ball.dropTime) {
+            ball.dropTime = now;
           } else {
-            ball.dropTime = t;
+            let t = now - ball.dropTime;
+            let v1 = ball.v;
+            let a = ball.g - ball.a;
+            let v2 = v1 + a * (t - ball.preTime);
+            ball.d = ((v2 ** 2 - v1 ** 2) / (2 * Math.abs(a))) * 100;
+            ball.preTime = t;
+            ball.v = v2;
           }
-          ball.preTime = t;
           raf = window.requestAnimationFrame(dropBall);
         } else {
-          ball.vy = 0;
+          ball.d = 0;
+          ball.preTime = 0;
           ball.dropTime = 0;
         }
-        console.log(ball.vy);
+
+        ball.y += ball.d;
+
+        ctx.save();
+        ctx.fillStyle = "rgba(240,240,240,.9)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ball.draw(ctx);
+        ctx.restore();
       }
     </script>
   </body>

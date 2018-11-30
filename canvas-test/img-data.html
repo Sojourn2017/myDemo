@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IMGDATA</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <br />
+    <canvas id="canvas" width="375" height="400"> 不支持canvas！ </canvas>
+
+    <script>
+      window.onload = function() {
+        canvas = document.querySelector("#canvas");
+        var color = document.getElementById("color");
+        if (!canvas.getContext) {
+          return;
+        }
+        ctx = canvas.getContext("2d");
+        draw(ctx);
+
+        canvas.addEventListener("mousemove", pick);
+      };
+
+      function draw(ctx) {
+        ctx.save();
+        let lineGradient = ctx.createLinearGradient(0, 0, 100, 0);
+        lineGradient.addColorStop(0, "rgba(255, 40, 200, .5)");
+        lineGradient.addColorStop(1, "rgba(40, 40, 200, .5)");
+
+        let img = new Image();
+        img.src = "./2.png";
+        img.onload = function() {
+          ctx.drawImage(img, 0, 0, 250, 250);
+          console.log(ctx.getImageData(0, 0, 250, 250));
+        };
+      }
+
+      // 颜色选择器
+      function pick(event) {
+        var x = event.layerX;
+        var y = event.layerY;
+        var pixel = ctx.getImageData(x, y, 1, 1);
+        var data = pixel.data;
+        var rgba =
+          "rgba(" +
+          data[0] +
+          "," +
+          data[1] +
+          "," +
+          data[2] +
+          "," +
+          data[3] / 255 +
+          ")";
+        drawMsgBox({ ctx, posX: x, posY: y });
+      }
+
+      function drawMsgBox({
+        ctx,
+        posX = 75,
+        posY = 75,
+        width = 100,
+        height = width / 2,
+        content = "",
+        contentColor = "#000"
+      }) {
+        // 初始化数据
+        let [canvasWidth, canvasHeight] = [ctx.canvas.width, ctx.canvas.height];
+        let [x, y, w, h] = [posX, posY, width, height];
+        let r = Math.floor(w / 6);
+        let [wl, hl] = [w - 2 * r, h - 2 * r];
+        let ts = Math.floor(w / 3);
+
+        // 二次贝塞尔曲线
+        ctx.save();
+        ctx.beginPath();
+        if (x + w < canvasWidth && h + r < y) {
+          ctx.moveTo(x, y);
+          ctx.quadraticCurveTo((x = x + ts), y, x, (y = y - r));
+          ctx.lineTo((x = x - (ts - r)), y);
+          ctx.quadraticCurveTo((x = x - r), y, x, (y = y - r));
+          ctx.lineTo(x, (y = y - hl));
+          ctx.quadraticCurveTo(x, (y = y - r), (x = x + r), y);
+          ctx.lineTo((x = x + wl), y);
+          ctx.quadraticCurveTo((x = x + r), y, x, (y = y + r));
+          ctx.lineTo(x, (y = y + hl));
+          ctx.quadraticCurveTo(x, (y = y + r), (x = x - r), y);
+          ctx.lineTo((x = x - (wl - ts)), y);
+          ctx.quadraticCurveTo((x = x - r), (y = y + r), (x = x - ts), y);
+        } else if (x + w < canvasWidth && h + r > y) {
+          ctx.moveTo(x, y);
+          ctx.quadraticCurveTo((x = x + ts), y, x, (y = y + r));
+          ctx.lineTo((x = x - (ts - r)), y);
+          ctx.quadraticCurveTo((x = x - r), y, x, (y = y + r));
+          ctx.lineTo(x, (y = y + hl));
+          ctx.quadraticCurveTo(x, (y = y + r), (x = x + r), y);
+          ctx.lineTo((x = x + wl), y);
+          ctx.quadraticCurveTo((x = x + r), y, x, (y = y - r));
+          ctx.lineTo(x, (y = y - hl));
+          ctx.quadraticCurveTo(x, (y = y - r), (x = x - r), y);
+          ctx.lineTo((x = x - (wl - ts)), y);
+          ctx.quadraticCurveTo((x = x - r), (y = y - r), (x = x - ts), y);
+        } else if (w < x && h + r > y) {
+          ctx.moveTo(x, y);
+          ctx.quadraticCurveTo((x = x - ts), y, x, (y = y + r));
+          ctx.lineTo((x = x + (ts - r)), y);
+          ctx.quadraticCurveTo((x = x + r), y, x, (y = y + r));
+          ctx.lineTo(x, (y = y + hl));
+          ctx.quadraticCurveTo(x, (y = y + r), (x = x - r), y);
+          ctx.lineTo((x = x - wl), y);
+          ctx.quadraticCurveTo((x = x - r), y, x, (y = y - r));
+          ctx.lineTo(x, (y = y - hl));
+          ctx.quadraticCurveTo(x, (y = y - r), (x = x + r), y);
+          ctx.lineTo((x = x + (wl - ts)), y);
+          ctx.quadraticCurveTo((x = x + r), (y = y - r), (x = x + ts), y);
+        } else {
+          ctx.moveTo(x, y);
+          ctx.quadraticCurveTo((x = x - ts), y, x, (y = y - r));
+          ctx.lineTo((x = x + (ts - r)), y);
+          ctx.quadraticCurveTo((x = x + r), y, x, (y = y - r));
+          ctx.lineTo(x, (y = y - hl));
+          ctx.quadraticCurveTo(x, (y = y - r), (x = x - r), y);
+          ctx.lineTo((x = x - wl), y);
+          ctx.quadraticCurveTo((x = x - r), y, x, (y = y + r));
+          ctx.lineTo(x, (y = y + hl));
+          ctx.quadraticCurveTo(x, (y = y + r), (x = x + r), y);
+          ctx.lineTo((x = x + (wl - ts)), y);
+          ctx.quadraticCurveTo((x = x + r), (y = y + r), (x = x + ts), y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+      }
+    </script>
+  </body>
+</html>
