@@ -26,8 +26,7 @@
         }
         ctx = canvas.getContext("2d");
         draw(ctx);
-
-        canvas.addEventListener("mousemove", pick);
+        window.store = {};
       };
 
       function draw(ctx) {
@@ -39,8 +38,9 @@
         let img = new Image();
         img.src = "./2.png";
         img.onload = function() {
-          ctx.drawImage(img, 0, 0, 250, 250);
-          console.log(ctx.getImageData(0, 0, 250, 250));
+          ctx.drawImage(img, 0, 0, 375, 400);
+          window.store.imgData = ctx.getImageData(0, 0, 375, 400);
+          canvas.addEventListener("mousemove", pick);
         };
       }
 
@@ -50,17 +50,10 @@
         var y = event.layerY;
         var pixel = ctx.getImageData(x, y, 1, 1);
         var data = pixel.data;
-        var rgba =
-          "rgba(" +
-          data[0] +
-          "," +
-          data[1] +
-          "," +
-          data[2] +
-          "," +
-          data[3] / 255 +
-          ")";
-        drawMsgBox({ ctx, posX: x, posY: y });
+        var rgba = `rgba(${data[0]},${data[1]},${data[2]},${data[3]})`;
+        var contentRgba = `rgba(${255 - data[0]},${255 - data[1]},${255 - data[2]},1)`
+        ctx.putImageData(window.store.imgData, 0, 0);
+        drawMsgBox({ ctx, posX: x, posY: y, content: rgba, width: 120, height: 20, bgColor: rgba, contentColor: contentRgba});
       }
 
       function drawMsgBox({
@@ -69,19 +62,21 @@
         posY = 75,
         width = 100,
         height = width / 2,
-        content = "",
-        contentColor = "#000"
+        content = "rgba(0, 0, 0, 1)",
+        contentColor = "rgba(0, 0, 0, 1)",
+        bgColor = "rgba(255, 255, 255, 1)"
       }) {
         // 初始化数据
         let [canvasWidth, canvasHeight] = [ctx.canvas.width, ctx.canvas.height];
         let [x, y, w, h] = [posX, posY, width, height];
-        let r = Math.floor(w / 6);
+        let r = Math.floor(Math.min(w, h) / 10);
         let [wl, hl] = [w - 2 * r, h - 2 * r];
-        let ts = Math.floor(w / 3);
+        let ts = Math.floor(Math.min(w, h) / 6);
 
         // 二次贝塞尔曲线
         ctx.save();
         ctx.beginPath();
+        ctx.font = `12px serif`;
         if (x + w < canvasWidth && h + r < y) {
           ctx.moveTo(x, y);
           ctx.quadraticCurveTo((x = x + ts), y, x, (y = y - r));
@@ -95,6 +90,10 @@
           ctx.quadraticCurveTo(x, (y = y + r), (x = x - r), y);
           ctx.lineTo((x = x - (wl - ts)), y);
           ctx.quadraticCurveTo((x = x - r), (y = y + r), (x = x - ts), y);
+          ctx.fillStyle = bgColor;
+          ctx.fill();
+          ctx.fillStyle = contentColor;
+          ctx.fillText(content, x + 5, y - 2 * r - 4, width - 10);
         } else if (x + w < canvasWidth && h + r > y) {
           ctx.moveTo(x, y);
           ctx.quadraticCurveTo((x = x + ts), y, x, (y = y + r));
@@ -108,6 +107,10 @@
           ctx.quadraticCurveTo(x, (y = y - r), (x = x - r), y);
           ctx.lineTo((x = x - (wl - ts)), y);
           ctx.quadraticCurveTo((x = x - r), (y = y - r), (x = x - ts), y);
+          ctx.fillStyle = bgColor;
+          ctx.fill();
+          ctx.fillStyle = contentColor;
+          ctx.fillText(content, x + 5, y + 2 * r + 12, width - 10);
         } else if (w < x && h + r > y) {
           ctx.moveTo(x, y);
           ctx.quadraticCurveTo((x = x - ts), y, x, (y = y + r));
@@ -121,6 +124,10 @@
           ctx.quadraticCurveTo(x, (y = y - r), (x = x + r), y);
           ctx.lineTo((x = x + (wl - ts)), y);
           ctx.quadraticCurveTo((x = x + r), (y = y - r), (x = x + ts), y);
+          ctx.fillStyle = bgColor;
+          ctx.fill();
+          ctx.fillStyle = contentColor;
+          ctx.fillText(content, x - width + 5, y + 2 * r + 12, width - 10);
         } else {
           ctx.moveTo(x, y);
           ctx.quadraticCurveTo((x = x - ts), y, x, (y = y - r));
@@ -134,8 +141,13 @@
           ctx.quadraticCurveTo(x, (y = y + r), (x = x + r), y);
           ctx.lineTo((x = x + (wl - ts)), y);
           ctx.quadraticCurveTo((x = x + r), (y = y + r), (x = x + ts), y);
+          ctx.fillStyle = bgColor;
+          ctx.fill();
+          ctx.fillStyle = contentColor;
+          ctx.fillText(content, x - width + 5, y - 2 * r - 4, width - 10);
         }
         ctx.closePath();
+        ctx.strokeStyle = contentColor;
         ctx.stroke();
         ctx.restore();
       }
