@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Invert</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    .test {
+      width: 400px;
+      height: 400px;
+      background: #808080;
+      position: relative;
+    }
+    #mid {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      padding: 20px 20px;
+      margin: 30px 30px;
+      border: 10px solid rgb(200, 100, 40);
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="test">
+    <div id="mid"></div>
+  </div>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    var mid = document.querySelector('#mid');
+    mid.addEventListener('mousedown', function(event) {
+      console.log(event)
+    })
+  </script>
+</body>
+</html>
