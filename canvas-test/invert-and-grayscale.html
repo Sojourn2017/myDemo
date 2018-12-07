@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Invert</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .test {
+        width: 400px;
+        height: 400px;
+        background: #808080;
+        position: relative;
+      }
+      #mid {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        padding: 20px 20px;
+        margin: 30px 30px;
+        border: 10px solid rgb(200, 100, 40);
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="file"
+      id="avatar"
+      name="avatar"
+      accept="image/png, image/jpeg"
+    />
+    <br>
+    <canvas id="canvas">不支持canvas！</canvas> <canvas id="invert"></canvas>
+    <canvas id="grayscale"></canvas>
+
+    <script>
+      window.onload = function() {
+        window.store = {};
+        store.canvas = document.querySelector("#canvas");
+        store.invert = document.querySelector("#invert");
+        store.grayscale = document.querySelector("#grayscale");
+        if (!store.canvas.getContext) return;
+        store.ctx = store.canvas.getContext("2d");
+        store.ctx_2 = store.invert.getContext("2d");
+        store.ctx_3 = store.grayscale.getContext("2d");
+
+        document
+          .querySelector("#avatar")
+          .addEventListener("input", function(e) {
+            var img = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+              console.log(event)
+              draw(event.target.result);
+            };
+            reader.readAsDataURL(img);
+          });
+      };
+
+      function draw(src) {
+        var img = new Image();
+        img.src = src;
+        img.onload = function() {
+          store.canvas.width = store.invert.width = store.grayscale.width =
+            img.width;
+          store.canvas.height = store.invert.height = store.grayscale.height =
+            img.height;
+
+          store.ctx.drawImage(img, 0, 0);
+          drawInvert(store.ctx, store.ctx_2);
+          drawGrayscale(store.ctx, store.ctx_3);
+        };
+      }
+
+      function drawInvert(ctx, target) {
+        let imgData = ctx.getImageData(
+          0,
+          0,
+          ctx.canvas.width,
+          ctx.canvas.height
+        );
+        let data = imgData.data;
+        for (let i = 0, len = data.length; i < len; i += 4) {
+          data[i] = 255 - data[i]; // red
+          data[i + 1] = 255 - data[i + 1]; // green
+          data[i + 2] = 255 - data[i + 2]; // blue
+        }
+        target.putImageData(imgData, 0, 0);
+      }
+
+      function drawGrayscale(ctx, target) {
+        let imgData = ctx.getImageData(
+          0,
+          0,
+          ctx.canvas.width,
+          ctx.canvas.height
+        );
+        let data = imgData.data;
+        for (let i = 0, len = data.length; i < len; i += 4) {
+          let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+          data[i] = avg; // red
+          data[i + 1] = avg; // green
+          data[i + 2] = avg; // blue
+        }
+        target.putImageData(imgData, 0, 0);
+      }
+    </script>
+  </body>
+</html>
