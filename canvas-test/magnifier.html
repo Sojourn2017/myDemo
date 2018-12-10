@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Magnifier</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="250" height="250">不支持canvas！</canvas>
+    <canvas id="zoom" width="200" height="200">不支持canvas！</canvas>
+    <label for="smooth">
+      <input type="checkbox" id="smooth" checked /> 反锯齿
+    </label>
+
+    <script>
+      window.store = {};
+
+      window.onload = function() {
+        store.canvas = document.querySelector("#canvas");
+        if (!store.canvas.getContext) return;
+        store.ctx = store.canvas.getContext("2d");
+
+        store.zoom = document.querySelector("#zoom");
+        store.zoomCtx = store.zoom.getContext("2d");
+
+        store.smooth = document.querySelector("#smooth");
+        store.smooth.addEventListener("change", toggleSmooth);
+
+        store.img = new Image();
+        store.img.src = "./1.jpg";
+        store.img.onload = function() {
+          store.ctx.drawImage(
+            this,
+            0,
+            0,
+            store.canvas.width,
+            store.canvas.height
+          );
+          store.canvas.addEventListener("mousemove", zoom);
+        };
+      };
+
+      function toggleSmooth(event) {
+        store.zoomCtx.imageSmoothingEnabled = event.target.checked;
+        store.zoomCtx.mozImageSmoothingEnabled = event.target.checked;
+        store.zoomCtx.webkitImageSmoothingEnabled = event.target.checked;
+        store.zoomCtx.msImageSmoothingEnabled = event.target.checked;
+      }
+
+      function zoom(event) {
+        var imgWidth = store.img.width;
+        var imgHeight = store.img.height;
+        var canvasWidth = store.canvas.width;
+        var canvasHeight = store.canvas.height;
+        var x = event.layerX * (imgWidth / canvasWidth);
+        var y = event.layerY * (imgHeight / canvasWidth);
+        store.zoomCtx.drawImage(
+          store.img,
+          Math.abs(x - 50),
+          Math.abs(y - 50),
+          x + 50 < imgWidth ? 100 : imgWidth - x + 50,
+          y + 50 < imgHeight ? 100 : imgHeight - y + 50,
+          0,
+          0,
+          200,
+          200
+        );
+      }
+    </script>
+  </body>
+</html>
