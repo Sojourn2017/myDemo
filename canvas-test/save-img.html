@@ -18,11 +18,11 @@
       name="avatar"
       accept="image/png, image/jpeg"
     />
+    <input type="button" id="save-img" value="保存图片">
     <br />
     <br />
-    <canvas id="canvas" width="250" , height="250">不支持Canvas！</canvas>
-    <img src="" style="display: none">
-    <textarea rows="3" cols="20" style="resize:none;"></textarea>
+    <canvas id="canvas" width="250" height="250">不支持Canvas！</canvas>
+
 
     <script>
       var store = {};
@@ -36,12 +36,12 @@
           .querySelector("#avatar")
           .addEventListener("input", function(e) {
             var img = e.target.files[0];
+            store.img = img; 
             var reader = new FileReader();
+            reader.readAsDataURL(img);
             reader.onload = function(event) {
-              console.log(event);
               draw(event.target.result);
             };
-            reader.readAsDataURL(img);
           });
       };
 
@@ -52,10 +52,17 @@
           store.canvas.width = img.width;
           store.canvas.height = img.height;
           store.ctx.drawImage(img, 0, 0);
-          var dataUrl = store.canvas.toDataURL('image/png');
-          console.log(dataUrl)
-          window.open(dataUrl);
+          dataUrl = store.canvas.toDataURL('image/png');
+          document.getElementById('save-img').addEventListener('click', createAEl.bind(null, dataUrl, store.img.name));
         };
+      }
+
+      function createAEl (url, name) {
+        var a = document.createElement('a');
+        var event = new MouseEvent('click');
+        a.download = name || '下载图片';
+        a.href = url;
+        a.dispatchEvent(event);
       }
     </script>
   </body>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Save Image</title>
+    <style>
+      html,body {
+        margin: 0;
+        font-size: 16px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .input-box {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0 1rem 1rem;
+      }
+      .url-input {
+        border: 1px solid rgb(0, 150, 200);
+        width: 75vw;
+        padding: 0.25rem 0.5rem;
+        height: 2rem;
+        line-height: 1.5rem;
+        outline: none;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        color: #5c5c5c;
+        font-size: 1rem;
+      }
+      .url-input::placeholder {
+        font-size: 1rem;
+        color: #aaa;
+      }
+      .save-img-btn {
+        border: none;
+        background: rgb(0, 150, 200);
+        padding: 0 1rem;
+        height: 2rem;
+        color: #fff;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .img-box {
+        width: 90%;
+        margin: 1rem;
+        background: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-box">
+        <input type="text" id="url-input" class="url-input" placeholder="输入图片地址" value="https://farm6.staticflickr.com/5574/14652112495_5a8d914848_k.jpg"/>
+        <input type="button" id="save-img-btn" class="save-img-btn" value="保存图片" />
+    </div>
+    <img
+      id="cross-img"
+      class="img-box"
+    />
+
+    <script>
+      var store = {};
+      window.onload = function() {
+        var urlInput = document.querySelector('#url-input');
+        urlInput.addEventListener('input', draw);
+        store.inputVal = urlInput.value;
+        urlInput.dispatchEvent(new Event('input'));
+
+        var saveImgBtn = document.querySelector("#save-img-btn");
+        saveImgBtn.addEventListener("click", saveImg);
+      };
+
+      function draw(event) {
+        var url = event.target.value.trim();
+        document.querySelector("#cross-img").src = url
+        var img = new Image();
+        img.src = url;
+        img.crossOrigin = "Anonymous";
+        img.onload = function() {
+          createCanvas(img);
+          console.log(img)
+        };
+      }
+
+      function createCanvas (img) {
+        var canvas = document.createElement('canvas');
+        if (!canvas.getContext) return;
+        var ctx = canvas.getContext('2d');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        dataUrl = canvas.toDataURL('image/png');
+        
+        store.canvas = canvas;
+        store.ctx = ctx;
+        store.dataUrl = dataUrl;
+      }
+
+      function saveImg() {
+        if (!store.dataUrl) return;
+        var a = document.createElement('a');
+        a.download = store.inputVal.split('/').pop() || '图片';
+        a.href = store.dataUrl;
+        a.dispatchEvent(new MouseEvent('click'));
+      }
+    </script>
+  </body>
+</html>
