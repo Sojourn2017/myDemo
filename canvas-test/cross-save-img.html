@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Save Image</title>
     <style>
-      html,body {
+      html,
+      body {
         margin: 0;
         font-size: 16px;
       }
@@ -46,29 +47,65 @@
         cursor: pointer;
       }
       .img-box {
-        width: 90%;
+        width: 90vw;
+        height: auto;
+        min-height: 10rem;
         margin: 1rem;
-        background: #eee;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #eee;
+        background-size: cover;
+      }
+      .bg-over-size {
+        background-size: 120%;
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+      }
+      .server-box {
+        margin: 1rem;
+      }
+      .display-none {
+        display: none !important;
       }
     </style>
   </head>
   <body>
     <div class="input-box">
-        <input type="text" id="url-input" class="url-input" placeholder="输入图片地址" value="https://farm6.staticflickr.com/5574/14652112495_5a8d914848_k.jpg"/>
-        <input type="button" id="save-img-btn" class="save-img-btn" value="保存图片" />
+      <!-- https://farm6.staticflickr.com/5574/14652112495_5a8d914848_k.jpg -->
+      <input
+        type="text"
+        id="url-input"
+        class="url-input"
+        placeholder="输入图片地址"
+        value="https://farm6.staticflickr.com/5574/14652112495_5a8d914848_k.jpg"
+      />
+      <input
+        type="button"
+        id="save-img-btn"
+        class="save-img-btn"
+        value="保存图片"
+      />
     </div>
-    <img
-      id="cross-img"
-      class="img-box"
-    />
+    <div class="img-box" id="img-box"><img id="cross-img" class="img" /></div>
+    <div id="server-box" class="server-box"></div>
 
     <script>
-      var store = {};
+      var store = {
+        MIME: {
+          jpg: "image/jpeg",
+          jpeg: "image/jpeg",
+          webp: "image/webp",
+          png: "image/png"
+        }
+      };
       window.onload = function() {
-        var urlInput = document.querySelector('#url-input');
-        urlInput.addEventListener('input', draw);
+        var urlInput = document.querySelector("#url-input");
+        urlInput.addEventListener("input", draw);
         store.inputVal = urlInput.value;
-        urlInput.dispatchEvent(new Event('input'));
+        urlInput.dispatchEvent(new Event("input"));
+        // store.inputValChange = true;
 
         var saveImgBtn = document.querySelector("#save-img-btn");
         saveImgBtn.addEventListener("click", saveImg);
@@ -76,25 +113,43 @@
 
       function draw(event) {
         var url = event.target.value.trim();
-        document.querySelector("#cross-img").src = url
-        var img = new Image();
+        var img = document.querySelector("#cross-img");
         img.src = url;
         img.crossOrigin = "Anonymous";
         img.onload = function() {
           createCanvas(img);
-          console.log(img)
         };
       }
 
-      function createCanvas (img) {
-        var canvas = document.createElement('canvas');
+      function createCanvas(img) {
+        var canvas = document.createElement("canvas");
         if (!canvas.getContext) return;
-        var ctx = canvas.getContext('2d');
-        canvas.width = img.width;
-        canvas.height = img.height;
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        var ctx = canvas.getContext("2d");
         ctx.drawImage(img, 0, 0);
-        dataUrl = canvas.toDataURL('image/png');
-        
+        var dataUrl = canvas.toDataURL(
+          store.MIME[store.inputVal.split(".").pop()],
+          1
+        );
+
+        var blobUrl = canvas.toBlob(
+          function(blob) {
+            store.blobUrl = URL.createObjectURL(blob);
+          },
+          store.MIME[store.inputVal.split(".").pop()],
+          1
+        );
+
+        // if (store.inputValChange) {
+        //   store.inputValChange = false;
+        //   var imgBox = document.querySelector("#img-box");
+        //   imgBox.style.width = img.width + "px";
+        //   imgBox.style.height = img.height + "px";
+        //   imgBox.style.backgroundImage = "url(" + dataUrl + ")";
+        //   img.classList.add("display-none");
+        // }
+
         store.canvas = canvas;
         store.ctx = ctx;
         store.dataUrl = dataUrl;
@@ -102,10 +157,19 @@
 
       function saveImg() {
         if (!store.dataUrl) return;
-        var a = document.createElement('a');
-        a.download = store.inputVal.split('/').pop() || '图片';
-        a.href = store.dataUrl;
-        a.dispatchEvent(new MouseEvent('click'));
+        var a = document.createElement("a");
+        a.download = store.inputVal.split("/").pop() || "图片";
+        if (store.blobUrl) {
+          a.href = store.blobUrl;
+        } else {
+          a.href = store.dataUrl;
+        }
+        a.innerText = "下载图片";
+
+        // document.querySelector("#server-box").appendChild(a);
+
+        a.dispatchEvent(new MouseEvent("click"));
+        URL.revokeObjectURL(store.blobUrl);
       }
     </script>
   </body>
