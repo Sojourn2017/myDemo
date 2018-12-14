@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>myPrint</title>
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+    <script src="./jq-print-plugin.js"></script>
+  </head>
+  <body>
+    <button id="print-btn">打印</button>
+
+    <div id="print">
+      <div id="printBlock" style="border: 1px solid #000000;margin: 0 auto">
+        <div style="border-bottom: 1px solid #000;padding: 5px 0;">
+          <div style="text-align: center;font-size: 22px;font-weight: bolder;">
+            xxx诊所
+          </div>
+          <div style="text-align: center;font-size: 18px;" class="print-page">
+            挂号单
+          </div>
+        </div>
+        <div
+          style="border-bottom: 1px solid #000;padding: 10px 5px 0;font-size: 14px;"
+        >
+          <div style="margin-bottom: 10px;">科室：404</div>
+          <div style="margin-bottom: 10px;">
+            医生姓名：张三
+          </div>
+          <div style="margin-bottom: 10px;">
+            挂号时间：2018-12-14
+            <span
+              style="padding-left: 5px;"
+              >12:12:12</span
+            >
+          </div>
+        </div>
+        <div
+          style="border-bottom: 1px solid #000;padding: 10px 5px 0;font-size: 14px;"
+          class="print-page"
+        >
+          <div style="margin-bottom: 10px;">
+            患者姓名：李四
+          </div>
+          <div style="margin-bottom: 10px;">排队号：</div>
+          <div style="margin-bottom: 10px;">
+            诊金：404元
+          </div>
+          <div style="margin-bottom: 10px;">
+            实收金额：404元
+          </div>
+        </div>
+        <section style="padding: 10px 5px 0;font-size: 14px;">
+          备注：挂号当日有效，过期作废！
+          <div style="text-align: center;">
+            <img :src="imgData" style="width: 160px;" />
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function() {
+        $("#print-btn").on("click", function() {
+          $.myPrint();
+        });
+      };
+    </script>
+  </body>
+</html>

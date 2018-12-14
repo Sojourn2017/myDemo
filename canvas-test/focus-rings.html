@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Focus rings</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        font-size: 16px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas">
+      <input id="button" type="range" min="1" max="12"/>
+    </canvas>
+
+    <script>
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      var button = document.getElementById("button");
+
+      button.focus();
+
+      ctx.beginPath();
+      ctx.rect(10, 10, 30, 30);
+      ctx.drawFocusIfNeeded(button);
+    </script>
+  </body>
+</html>
