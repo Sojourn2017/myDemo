@@ -1,0 +1,15 @@
+{
+  "name": "promise-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rewrite-promise.js",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
