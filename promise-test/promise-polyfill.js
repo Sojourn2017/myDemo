@@ -133,31 +133,27 @@ Promise.prototype.then = function(onFulfilled, onRejected) {
   var promise = new Promise(function(resolve, reject) {
     if (_this.state === "pending") {
       typeof onFulfilled === "function" &&
-        _this.onFulfilledStack.push(
-          function(param) {
-            setTimeout(function() {
-              try {
-                var x = onFulfilled(param);
-                resolvePromise(promise, x, resolve, reject);
-              } catch (e) {
-                reject(e);
-              }
-            });
-          }
-        );
+        _this.onFulfilledStack.push(function(param) {
+          setTimeout(function() {
+            try {
+              var x = onFulfilled(param);
+              resolvePromise(promise, x, resolve, reject);
+            } catch (e) {
+              reject(e);
+            }
+          });
+        });
       typeof onRejected === "function" &&
-        _this.onRejectedStack.push(
-          function(param) {
-            setTimeout(function() {
-              try {
-                var x = onRejected(param);
-                resolvePromise(promise, x, resolve, reject);
-              } catch (e) {
-                reject(e);
-              }
-            });
-          }
-        );
+        _this.onRejectedStack.push(function(param) {
+          setTimeout(function() {
+            try {
+              var x = onRejected(param);
+              resolvePromise(promise, x, resolve, reject);
+            } catch (e) {
+              reject(e);
+            }
+          });
+        });
     } else if (_this.state === "fulfilled") {
       typeof onFulfilled === "function" &&
         setTimeout(function() {
@@ -219,6 +215,117 @@ function resolvePromise(promise, x, resolve, reject) {
     resolve(x);
   }
 }
+
+Promise.prototype.catch = function(onRejected) {
+  return this.then(null, onRejected);
+};
+
+Promise.prototype.finally = function(callback) {
+  var P = this.constructor;
+  return this.then(function(value) {
+    return P.resolve(callback()).then(
+      function() {
+        return value;
+      },
+      function(reason) {
+        P.resolve(callback()).then(function() {
+          throw reason;
+        });
+      }
+    );
+  });
+};
+
+Promise.resolve = function(value) {
+  return new Promise(function(resolve) {
+    resolve(value);
+  });
+};
+
+Promise.reject = function(reason) {
+  return new Promise(function(resolve, reject) {
+    reject(reason);
+  });
+};
+
+Promise.all = function(iterable) {
+  var _this = this;
+  return new _this(function(resolve, reject) {
+    if (!iterable || !Array.isArray(iterable)) {
+      reject(new TypeError(iterable + " is not iterable"));
+    }
+    var len = iterable.length;
+    if (!len) return resolve([]);
+    var res = Array(len);
+    var observer = {};
+    var counter = 0;
+    Object.defineProperty(observer, "counter", {
+      get: function() {
+        return counter;
+      },
+      set: function(newValue) {
+        counter = newValue;
+        if (counter === len) {
+          resolve(res);
+        }
+      }
+    });
+
+    iterable.forEach(function(v, i) {
+      (v.then ? v : _this.resolve(v)).then(
+        function(r) {
+          res[i] = r;
+          observer.counter++;
+          return r;
+        },
+        function(e) {
+          reject(e);
+        }
+      );
+    });
+  });
+};
+
+Promise.race = function(iterable) {
+  var _this = this;
+  return new this(function(resolve, reject) {
+    if (!iterable || !Array.isArray(iterable)) {
+      reject(new TypeError(iterable + " is not iterable"));
+    }
+
+    var len = iterable.length;
+    if (!len) return;
+    var res;
+    var observer = {};
+    var called = false;
+    Object.defineProperty(observer, "called", {
+      get: function() {
+        return called;
+      },
+      set: function(newValue) {
+        called = newValue;
+        if (called === true) {
+          resolve(res);
+        }
+      }
+    });
+
+    iterable.forEach(function(v, i) {
+      (v.then ? v : _this.resolve(v)).then(
+        function(r) {
+          if (!called) {
+            res = r;
+            observer.called = true;
+          }
+          return r;
+        },
+        function(e) {
+          reject(e);
+        }
+      );
+    });
+  });
+};
 
 Promise.defer = Promise.deferred = function() {
   var dfd = {};
