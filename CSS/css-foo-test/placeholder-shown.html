@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Placeholder Shown</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .input-fill-x {
+        position: relative;
+        font-size: 16px;
+        border: 1px solid #376cff;
+        border-radius: 0.25em;
+        height: 2em;
+        display: flex;
+      }
+      .input-fill, .textarea-fill {
+        border: none;
+        border-radius: 0.25em;
+        background: transparent;
+        height: 100%;
+        line-height: 100%;
+        width: 100%;
+        outline: none;
+        padding: 0 0.5em;
+      }
+      .textarea-fill-x {
+        position: relative;
+      }
+      .textarea-fill {
+        border: 1px solid #376cff;
+        border-radius: 0.25em;
+      }
+      .input-fill:placeholder-shown::placeholder,
+      .textarea-fill:placeholder-shown::placeholder {
+        color: transparent;
+      }
+      .input-label,
+      .textarea-label {
+        font-size: 0.8em;
+        color: rgb(117, 117, 117);
+        padding: 0 0.4em;
+        position: absolute;
+        pointer-events: none;
+        left: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.4s ease-out;
+      }
+      .input-fill:not(:placeholder-shown) ~ .input-label,
+      .input-fill:focus ~ .input-label,
+      .textarea-fill:not(:placeholder-shown) ~ .textarea-label,
+      .textarea-fill:focus ~ .textarea-label {
+        transform: scale(0.75) translateY(-2.8em);
+        color: #376cff;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-fill-x">
+        <input type="text" class="input-fill" placeholder="邮箱" />
+        <label class="input-label">邮箱</label>
+      </div>
+      <br />
+      <br />
+      <!-- <div class="textarea-fill-x">
+        <textarea
+          type="text"
+          class="textarea-fill"
+          placeholder="评论"
+        ></textarea>
+        <label class="textarea-label">评论</label>
+      </div> -->
+    </div>
+  </body>
+</html>
