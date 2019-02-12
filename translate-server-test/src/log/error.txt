@@ -1,0 +1,6 @@
+Tue Feb 12 2019 17:11:25 GMT+0800 (中国标准时间): indexPage error: Error: ENOENT: no such file or directory, open 'E:\sojourn_file\Code\test\node\translate-server-test\src\pages\index.html' 
+Tue Feb 12 2019 17:11:26 GMT+0800 (中国标准时间): indexPage error: Error: ENOENT: no such file or directory, open 'E:\sojourn_file\Code\test\node\translate-server-test\src\pages\index.html' 
+Tue Feb 12 2019 17:44:16 GMT+0800 (中国标准时间): indexPage error: Error: EISDIR: illegal operation on a directory, read 
+Tue Feb 12 2019 17:44:52 GMT+0800 (中国标准时间): indexPage error: Error: EISDIR: illegal operation on a directory, read 
+Tue Feb 12 2019 17:45:14 GMT+0800 (中国标准时间): indexPage error: Error: EISDIR: illegal operation on a directory, read 
+Tue Feb 12 2019 17:45:15 GMT+0800 (中国标准时间): indexPage error: Error: EISDIR: illegal operation on a directory, read 
