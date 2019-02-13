@@ -5,21 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Translate</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <!-- import Vue.js -->
+    <script src="//vuejs.org/js/vue.js"></script>
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css" />
+    <!-- import iView -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
   </head>
   <body>
-    <h1>翻译工具</h1>
-    <input
-      id="translate-input"
-      type="text"
-      placeholder="请输入要翻译的内容"
-      value="测试"
-    />
-    <button id="translate-btn" class="btn">翻译</button>
+    <section id="app">
+      <header class="header p8">
+        <h1>翻译工具</h1>
+        <i-select v-model="searchEngine" style="width:5rem;">
+          <i-option
+            v-for="item in searchEngineList"
+            :value="item.value"
+            :key="item.value"
+            >{{ item.label }}</i-option
+          >
+        </i-select>
+      </header>
+      <nav class="nav mt5">
+        <i-button class="ts-lang">中文</i-button>
+        <Icon type="md-swap" size="24"></Icon>
+        <i-button class="ts-lang">英语</i-button>
+        <i-button
+          id="ts-btn"
+          type="primary"
+          style="width: 5rem; margin: 0.25rem 0 0.25rem 1rem;"
+          >翻译</i-button
+        >
+      </nav>
 
-    <div></div>
+      <section class="ts-box">
+        <div class="ts-source">
+          <i-input
+            class="source-text"
+            v-model="searchString"
+            type="textarea"
+            :autosize="true"
+            placeholder="输入翻译内容..."
+            autofocus
+          ></i-input>
+        </div>
+        <div class="ts-result"></div>
+      </section>
 
-    <p id="translate-result"></p>
+      <div class="result-box"></div>
+
+      <!-- <div class="demo-split mt10">
+        <split v-model="split">
+          <div slot="left" class="demo-split-pane">
+            <textarea
+              class="textarea"
+              id="search-text"
+              placeholder="输入要翻译的内容"
+            ></textarea>
+          </div>
+          <div slot="right" class="demo-split-pane">
+            Right Pane
+          </div>
+        </split>
+      </div> -->
+
+      <p id="ts-result"></p>
+    </section>
 
     <script src="./index.js"></script>
   </body>

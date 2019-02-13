@@ -15,14 +15,14 @@ export default function Server() {
 
       // 判断静态资源
       var fileType = handleStatic(pathName);
-      
+
       if (fileType) {
         api['/'](req, res, pathName, fileType);
       } else if (api[pathName]) {
         api[pathName](req, res);
       } else {
         res.writeHead(404, {
-          "Context-Type": `application/json`
+          "content-type": `application/json`
         });
 
         res.end("404 Not Found");

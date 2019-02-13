@@ -9,17 +9,17 @@ const API = {};
  * 首页
  */ 
 API["/"] = API["/index"] = function(req, res, pathName = '/index.html', contextType = 'text/html') {
-  fs.readFile('../src/static' + pathName, (err, data) => {
+  fs.readFile('./src/static' + pathName, (err, data) => {
     if (err) {
       writeLog('indexPage error: ' + err, 1);
 
       res.writeHead(404, {
-        "Context-Type": `text/plain`
+        "content-type": `text/plain`
       });
       res.end("404 Not Found");
     } else {
       res.writeHead(200, {
-        "Context-Tpye": contextType
+        "content-type": contextType
       });
       res.end(data);
     }
@@ -49,7 +49,6 @@ API["/translate"] = function(req, res) {
         .translate(JSON.parse(str).text)
         .then(result => {
           queryResult = result;
-          console.log(queryResult);
         })
         .catch(console.log);
     } catch (e) {
@@ -57,7 +56,7 @@ API["/translate"] = function(req, res) {
     }
 
     res.writeHead(200, {
-      "Context-Tpye": `application/json; charset="utf-8`
+      "content-type": `application/json; charset="utf-8`
     });
     res.end(JSON.stringify(queryResult));
   });
