@@ -46,7 +46,7 @@ API["/translate"] = function(req, res) {
     var queryResult;
     try {
       await ts
-        .translate(JSON.parse(str).text)
+        .translate(JSON.parse(str).text, 'baidu')
         .then(result => {
           queryResult = result;
         })

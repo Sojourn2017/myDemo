@@ -15,7 +15,7 @@
     <script src="//unpkg.com/iview/dist/iview.min.js"></script>
   </head>
   <body>
-    <section id="app">
+    <section id="app" v-cloak>
       <header class="header p8">
         <h1>翻译工具</h1>
         <i-select v-model="searchEngine" style="width:5rem;">
@@ -28,47 +28,93 @@
         </i-select>
       </header>
       <nav class="nav mt5">
-        <i-button class="ts-lang">中文</i-button>
-        <Icon type="md-swap" size="24"></Icon>
-        <i-button class="ts-lang">英语</i-button>
+        <i-button class="ts-lang">{{ sourceLang }}</i-button>
+        <Icon
+          @click="exchangeLang"
+          class="exchange-icon"
+          type="md-swap"
+          size="24"
+        ></Icon>
+        <i-button class="ts-lang">{{ resultLang }}</i-button>
         <i-button
           id="ts-btn"
           type="primary"
           style="width: 5rem; margin: 0.25rem 0 0.25rem 1rem;"
+          @click="searchFn"
           >翻译</i-button
         >
       </nav>
 
       <section class="ts-box">
         <div class="ts-source">
-          <i-input
-            class="source-text"
-            v-model="searchString"
-            type="textarea"
-            :autosize="true"
-            placeholder="输入翻译内容..."
-            autofocus
-          ></i-input>
+          <div class="source-text-box">
+            <i-input
+              class="source-text"
+              v-model="searchString"
+              type="textarea"
+              :autosize="{minRows: 3}"
+              placeholder="输入翻译内容..."
+              @on-change="searchFn"
+            ></i-input>
+            <input ref="input" type="text" class="copy-input">
+          </div>
+          <div class="ts-toolbar">
+            <Icon size="24" type="md-volume-up"></Icon>
+            <div>
+              <Icon @click="copyText('source')" size="24" type="md-copy"></Icon>
+              <Icon size="24" type="md-close"></Icon>
+            </div>
+          </div>
         </div>
-        <div class="ts-result"></div>
+        <div class="ts-result">
+          <div class="result-text pl8 pr8">{{ searchResult }}</div>
+          <div class="ts-toolbar">
+            <Icon size="24" type="md-volume-up"></Icon>
+            <div>
+              <Icon v-show="loadingTsFlag" class="loading-icon" size="24" type="ios-loading"></Icon>
+              <Icon @click="copyText('result')" size="24" type="md-copy"></Icon>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <div class="result-box"></div>
-
-      <!-- <div class="demo-split mt10">
-        <split v-model="split">
-          <div slot="left" class="demo-split-pane">
-            <textarea
-              class="textarea"
-              id="search-text"
-              placeholder="输入要翻译的内容"
-            ></textarea>
-          </div>
-          <div slot="right" class="demo-split-pane">
-            Right Pane
-          </div>
-        </split>
-      </div> -->
+      <div class="more-result-box">
+        <div class="more-result-box-left pl8 pr4">
+          <card v-show="keywords" class="result-card">
+            <span slot="title">重点词汇</span>
+            <p class="card-item" v-for="item in keywords">
+              <a class="card-key">{{item.word}}</a>&nbsp;&nbsp;
+              <span class="card-val">{{item.means.join('; ')}}</span>
+            </p>
+          </card>
+          <card class="result-card">
+            <span slot="title">The standard card</span>
+            <p>Content of card</p>
+            <p>Content of card</p>
+            <p>Content of card</p>
+          </card>
+          <card class="result-card">
+            <span slot="title">The standard card</span>
+            <p>Content of card</p>
+            <p>Content of card</p>
+            <p>Content of card</p>
+          </card>
+        </div>
+        <div class="more-result-box-right pl4 pr8">
+          <card class="result-card">
+            <span slot="title">The standard card</span>
+            <p>Content of card</p>
+            <p>Content of card</p>
+            <p>Content of card</p>
+          </card>
+          <card class="result-card">
+            <span slot="title">The standard card</span>
+            <p>Content of card</p>
+            <p>Content of card</p>
+            <p>Content of card</p>
+          </card>
+        </div>
+      </div>
 
       <p id="ts-result"></p>
     </section>
