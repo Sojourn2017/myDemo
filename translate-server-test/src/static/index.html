@@ -13,12 +13,17 @@
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css" />
     <!-- import iView -->
     <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="./LANGDICT.js"></script>
   </head>
   <body>
     <section id="app" v-cloak>
       <header class="header p8">
         <h1>翻译工具</h1>
-        <i-select v-model="searchEngine" style="width:5rem;">
+        <i-select
+          @on-change="getTsFn"
+          v-model="searchEngine"
+          style="width:5rem;"
+        >
           <i-option
             v-for="item in searchEngineList"
             :value="item.value"
@@ -28,21 +33,56 @@
         </i-select>
       </header>
       <nav class="nav mt5">
-        <i-button class="ts-lang">{{ sourceLang }}</i-button>
+        <i-button
+          @click="selectLangFlag = true; selectLangType = 'source';"
+          class="ts-lang"
+          >{{ sourceLang.lang }}</i-button
+        >
         <Icon
           @click="exchangeLang"
           class="exchange-icon"
           type="md-swap"
           size="24"
         ></Icon>
-        <i-button class="ts-lang">{{ resultLang }}</i-button>
+        <i-button
+          @click="selectLangFlag = true; selectLangType = 'result';"
+          class="ts-lang"
+          >{{ resultLang.lang }}</i-button
+        >
         <i-button
           id="ts-btn"
           type="primary"
           style="width: 5rem; margin: 0.25rem 0 0.25rem 1rem;"
-          @click="searchFn"
+          @click="getTsFn"
           >翻译</i-button
         >
+        <section
+          v-if="selectLangFlag"
+          @click="selectLangFlag = false"
+          class="mask"
+        >
+          <div class="select-lang-box">
+            <div class="normal-lang">
+              <div class="pl16 pr16 font-bold">常用语言</div>
+              <div
+                @click.stop="selectLang(item)"
+                v-for="item in normalLang"
+                class="select-lang-item"
+              >
+                {{ item.lang }}
+              </div>
+            </div>
+            <div class="all-lang">
+              <div
+                @click.stop="selectLang(item)"
+                v-for="item in langDict[searchEngine]"
+                class="select-lang-item"
+              >
+                {{ item.lang }}
+              </div>
+            </div>
+          </div>
+        </section>
       </nav>
 
       <section class="ts-box">
@@ -54,24 +94,45 @@
               type="textarea"
               :autosize="{minRows: 3}"
               placeholder="输入翻译内容..."
-              @on-change="searchFn"
+              @on-change="getTsFn"
             ></i-input>
-            <input ref="input" type="text" class="copy-input">
+            <input ref="input" type="text" class="copy-input" />
           </div>
           <div class="ts-toolbar">
-            <Icon size="24" type="md-volume-up"></Icon>
+            <div>
+              <Icon
+                v-show="showSourceAudioIcon"
+                @click="sourceAudioUri && $refs.sourceAudio.play()"
+                size="24"
+                type="md-volume-up"
+              ></Icon>
+              <audio ref="sourceAudio" :src="sourceAudioUri"></audio>
+            </div>
             <div>
               <Icon @click="copyText('source')" size="24" type="md-copy"></Icon>
-              <Icon size="24" type="md-close"></Icon>
+              <Icon @click="clearText" size="24" type="md-close"></Icon>
             </div>
           </div>
         </div>
         <div class="ts-result">
           <div class="result-text pl8 pr8">{{ searchResult }}</div>
           <div class="ts-toolbar">
-            <Icon size="24" type="md-volume-up"></Icon>
             <div>
-              <Icon v-show="loadingTsFlag" class="loading-icon" size="24" type="ios-loading"></Icon>
+              <Icon
+                v-show="showResultAudioIcon"
+                @click="resultAudioUri && $refs.resultAudio.play()"
+                size="24"
+                type="md-volume-up"
+              ></Icon>
+              <audio ref="resultAudio" :src="resultAudioUri"></audio>
+            </div>
+            <div>
+              <Icon
+                v-show="loadingTsFlag"
+                class="loading-icon"
+                size="24"
+                type="ios-loading"
+              ></Icon>
               <Icon @click="copyText('result')" size="24" type="md-copy"></Icon>
             </div>
           </div>
@@ -83,11 +144,14 @@
           <card v-show="keywords" class="result-card">
             <span slot="title">重点词汇</span>
             <p class="card-item" v-for="item in keywords">
-              <a class="card-key">{{item.word}}</a>&nbsp;&nbsp;
-              <span class="card-val">{{item.means.join('; ')}}</span>
+              <a @click="searchString = item.word" class="card-key">{{
+                item.word
+              }}</a
+              >&nbsp;&nbsp;
+              <span class="card-val">{{ item.means.join("; ") }}</span>
             </p>
           </card>
-          <card class="result-card">
+          <!-- <card class="result-card">
             <span slot="title">The standard card</span>
             <p>Content of card</p>
             <p>Content of card</p>
@@ -98,10 +162,10 @@
             <p>Content of card</p>
             <p>Content of card</p>
             <p>Content of card</p>
-          </card>
+          </card> -->
         </div>
         <div class="more-result-box-right pl4 pr8">
-          <card class="result-card">
+          <!-- <card class="result-card">
             <span slot="title">The standard card</span>
             <p>Content of card</p>
             <p>Content of card</p>
@@ -112,7 +176,7 @@
             <p>Content of card</p>
             <p>Content of card</p>
             <p>Content of card</p>
-          </card>
+          </card> -->
         </div>
       </div>
 

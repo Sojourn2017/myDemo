@@ -1,17 +1,23 @@
 import ts from "../util/translate";
 import fs from "fs";
 import writeLog from "../util/writeLog";
-import getClientIP from '../util/getClientIP';
+import getClientIP from "../util/getClientIP";
 
 const API = {};
 
 /**
  * 首页
- */ 
-API["/"] = API["/index"] = function(req, res, pathName = '/index.html', contextType = 'text/html') {
-  fs.readFile('./src/static' + pathName, (err, data) => {
+ */
+
+API["/"] = API["/index"] = function(
+  req,
+  res,
+  pathName = "/index.html",
+  contextType = "text/html"
+) {
+  fs.readFile("./src/static" + pathName, (err, data) => {
     if (err) {
-      writeLog('indexPage error: ' + err, 1);
+      writeLog("indexPage error: " + err, 1);
 
       res.writeHead(404, {
         "content-type": `text/plain`
@@ -28,31 +34,72 @@ API["/"] = API["/index"] = function(req, res, pathName = '/index.html', contextT
 
 /**
  * 翻译接口
- */ 
+ */
+
 API["/translate"] = function(req, res) {
-  var chunks = [];
-  var size = 0;
+  let chunks = [];
+  let size = 0;
   req.on("data", function(chunk) {
     chunks.push(chunk);
     size += chunk.length;
   });
 
   req.on("end", async function() {
-    var buf = Buffer.concat(chunks, size);
-    var str = buf.toString("utf8");
-
+    let buf = Buffer.concat(chunks, size);
+    let str = buf.toString("utf8");
     writeLog(`${getClientIP(req)} translate params: ${str} `);
 
-    var queryResult;
+    let params = JSON.parse(str);
+
+    let queryResult = {};
     try {
       await ts
-        .translate(JSON.parse(str).text, 'baidu')
+        .translate(params, params.engine)
         .then(result => {
-          queryResult = result;
+          queryResult = Object.assign(queryResult, result);
         })
-        .catch(console.log);
+        .catch(err => {
+          writeLog("translate error: " + err, 1);
+        });
     } catch (e) {
-      writeLog('translate error: ' + err, 1);
+      writeLog("translate error: " + err, 1);
+    }
+
+    res.writeHead(200, {
+      "content-type": `application/json; charset="utf-8`
+    });
+    res.end(JSON.stringify(queryResult));
+  });
+};
+
+API["/audio"] = function(req, res) {
+  let chunks = [];
+  let size = 0;
+  req.on("data", function(chunk) {
+    chunks.push(chunk);
+    size += chunk.length;
+  });
+
+  req.on("end", async function() {
+    let buf = Buffer.concat(chunks, size);
+    let str = buf.toString("utf8");
+    writeLog(`${getClientIP(req)} translate params: ${str} `);
+
+    let params = JSON.parse(str);
+    let queryResult = {};
+    try {
+      await ts
+        .audio(params.text, params.engine)
+        .then(uri => {
+          queryResult = Object.assign(queryResult, {
+            audioUri: uri
+          });
+        })
+        .catch(err => {
+          writeLog("audio error: " + err, 1);
+        });
+    } catch (e) {
+      writeLog("audio error: " + err, 1);
     }
 
     res.writeHead(200, {

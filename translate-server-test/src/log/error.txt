@@ -8,3 +8,25 @@ Wed Feb 13 2019 15:18:57 GMT+0800 (中国标准时间): Error: ENOENT: no such f
 Wed Feb 13 2019 15:18:57 GMT+0800 (中国标准时间): Error: ENOENT: no such file or directory, open 'E:\sojourn_file\Code\myDemo\src\log\log.txt'
 Wed Feb 13 2019 15:18:57 GMT+0800 (中国标准时间): Error: ENOENT: no such file or directory, open 'E:\sojourn_file\Code\myDemo\src\log\log.txt'
 Wed Feb 13 2019 15:18:57 GMT+0800 (中国标准时间): Error: ENOENT: no such file or directory, open 'E:\sojourn_file\Code\myDemo\src\log\log.txt'
+Fri Feb 15 2019 14:44:04 GMT+0800 (中国标准时间): indexPage error: TypeError: Cannot convert undefined or null to object 
+Fri Feb 15 2019 14:44:04 GMT+0800 (中国标准时间): indexPage error: TypeError: Cannot convert undefined or null to object 
+Fri Feb 15 2019 14:44:38 GMT+0800 (中国标准时间): indexPage error: TypeError: Cannot convert undefined or null to object 
+Fri Feb 15 2019 14:44:38 GMT+0800 (中国标准时间): indexPage error: TypeError: Cannot convert undefined or null to object 
+Fri Feb 15 2019 14:45:25 GMT+0800 (中国标准时间): translate error: TypeError: Cannot convert undefined or null to object 
+Fri Feb 15 2019 15:23:37 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:47:01 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:48:03 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:48:23 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:48:23 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:48:24 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:49:30 GMT+0800 (中国标准时间): audio error: Error 
+Fri Feb 15 2019 15:51:29 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 15:52:48 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:49:46 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:50:17 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:52:01 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:52:21 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:53:40 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:55:33 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 17:58:44 GMT+0800 (中国标准时间): translate error: Error 
+Fri Feb 15 2019 18:02:52 GMT+0800 (中国标准时间): translate error: Error 

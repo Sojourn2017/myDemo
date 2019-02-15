@@ -1,7 +1,8 @@
 var app = new Vue({
   el: "#app",
   data: {
-    split: 0.5,
+    langDict: {},
+    normalLang: [{ code: "zh", lang: "中文" }, { code: "en", lang: "英语" }],
     searchEngine: "baidu",
     searchEngineList: [
       {
@@ -19,15 +20,21 @@ var app = new Vue({
     ],
     searchString: "这是一个很长的句子： 用于测试翻译测试工具。",
     translateResult: null,
-    sourceLang: "中文",
-    resultLang: "英语",
-    searchTimer: null,
+    sourceLang: { code: "zh", lang: "中文" },
+    sourceLangList: [],
+    resultLang: { code: "en", lang: "英语" },
+    resultLangList: [],
+    getTsTimer: null,
     loadingTsFlag: false,
+    sourceAudioUri: "",
+    resultAudioUri: "",
+    selectLangFlag: false,
+    selectLangType: '',
   },
   computed: {
     searchResult: function() {
       var result = this.translateResult;
-      return result ? result.result.join(", ") : "";
+      return result && result.result ? result.result.join(", ") : "";
     },
     keywords: function() {
       // 重点词汇
@@ -36,29 +43,102 @@ var app = new Vue({
         "trans_result",
         "keywords"
       ]);
+    },
+    showSourceAudioIcon: function() {
+      if (this.searchEngine === "baidu") {
+        return true;
+      }
+      return false;
+    },
+    showResultAudioIcon: function() {
+      if (this.searchEngine !== "google") {
+        return true;
+      }
+      return false;
+    }
+  },
+  watch: {
+    searchString: function(newVal) {
+      if (newVal === "") {
+        this.translateResult = null;
+      } else {
+        this.getTsFn();
+      }
     }
   },
   created: function() {
-    this.searchFn(1);
+    this.langDict = window.LD;
+    this.loadingTsFlag = true;
+    this.getTranslate();
+    this.searchEngine === "baidu" && this.getAudioUri("source");
   },
   methods: {
-    searchFn: function (isImmediate) {
-      clearTimeout(this.searchTimer);
+    getTsFn: function() {
+      clearTimeout(this.getTsTimer);
       this.loadingTsFlag = true;
-      this.searchTimer = setTimeout(this.getTranslate, 1000)
+      this.getTsTimer = setTimeout(() => {
+        this.getTranslate();
+        this.searchEngine === "baidu" && this.getAudioUri("source");
+      }, 40);
     },
     getTranslate: function() {
+      if (this.searchString === "") {
+        this.loadingTsFlag = false;
+        return;
+      }
+      var timer = this.getTsTimer;
+      this.loadingTsFlag = true;
       this.postData("./translate", {
-        text: this.searchString
+        text: this.searchString,
+        engine: this.searchEngine,
+        form: this.sourceLang.code,
+        to: this.resultLang.code
       })
         .then(res => {
-          this.translateResult = res;
-          this.loadingTsFlag = false;
+          // 对最后一个请求赋值
+          if (timer === this.getTsTimer) {
+            this.translateResult = res;
+            this.searchEngine !== "google" && this.getAudioUri("result");
+          }
         })
-        .catch(console.log);
+        .catch(err => {
+          this.showMsg(err, "error");
+        })
+        .then(() => {
+          timer === this.getTsTimer && (this.loadingTsFlag = false);
+        });
     },
-    clearText: function () {
-
+    getAudioUri: function(type) {
+      var text = type === "source" ? this.searchString : this.searchResult;
+      if (text === "") return;
+      this.postData("./audio", {
+        text: type === "source" ? this.searchString : this.searchResult,
+        engine: this.searchEngine
+      })
+        .then(res => {
+          if (type === "source") {
+            this.sourceAudioUri = res.audioUri;
+          } else if (type === "result") {
+            this.resultAudioUri = res.audioUri;
+          }
+        })
+        .catch(err => {
+          this.showMsg(err, "error");
+        });
+    },
+    selectLang: function (item) {
+      if (this.selectLangType === "source") {
+        this.sourceLang = item
+      } else if (this.selectLangType === "result") {
+        this.resultLang = item;
+      }
+      this.selectLangFlag = false;
+      this.getTsFn();
+    },
+    clearText: function() {
+      this.searchString = "";
+      this.sourceAudioUri = "";
+      this.resultAudioUri = "";
     },
     copyText: function(type) {
       var input = this.$refs.input;
@@ -73,13 +153,14 @@ var app = new Vue({
       input.select(); // 选择对象
       document.execCommand("copy"); // 执行浏览器复制命令
       input.blur();
+      this.showMsg("复制成功", "success");
     },
     exchangeLang: function() {
       var tmp = this.sourceLang;
       this.sourceLang = this.resultLang;
       this.resultLang = tmp;
       this.searchString = this.searchResult;
-      this.searchFn(1);
+      this.getTsFn();
     },
     getChainProperty: function(origin, chainArr) {
       var res = origin;
@@ -91,6 +172,9 @@ var app = new Vue({
         res = res[cur];
       }
       return res;
+    },
+    showMsg: function(msg, type = "info") {
+      this.$Message[type](msg);
     },
     postData: function(url, data) {
       // Default options are marked with *
