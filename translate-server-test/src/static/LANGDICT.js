@@ -147,11 +147,18 @@ window.LD = {
     { code: "vi", lang: "越南语" },
     { code: "id", lang: "印度尼西亚语" },
     { code: "ar", lang: "阿拉伯语" },
+  ],
+  exchange: [
+    { code: "word_third", lang: "第三人称单数" },
+    { code: "word_pl", lang: "复数" },
+    { code: "word_ing", lang: "现在分词" },
+    { code: "word_past", lang: "过去式" },
+    { code: "word_done", lang: "过去分词" },
+    { code: "word_proto", lang: "原型" },
   ]
 };
 
 Object.defineProperty(window, "LD", {
-  enumerable: false,
   configurable: false,
   writable: false
 });
@@ -160,7 +167,7 @@ for (var key in window.LD) {
   window.LD[key].codeToName = function(code) {
     for (var i = 0; i < this.length; i++) {
       if (this[i].code == code) {
-        return this[i].name;
+        return this[i].lang;
       }
     }
     return null;

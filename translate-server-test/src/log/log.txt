@@ -6067,3 +6067,635 @@ Sat Feb 16 2019 21:38:33 GMT+0800 (中国标准时间): 127.0.0.1 /audio
 Sat Feb 16 2019 21:38:33 GMT+0800 (中国标准时间): 127.0.0.1 translate params: {"text":"test","engine":"baidu"}  
 Sat Feb 16 2019 21:38:34 GMT+0800 (中国标准时间): 127.0.0.1 /audio  
 Sat Feb 16 2019 21:38:34 GMT+0800 (中国标准时间): 127.0.0.1 translate params: {"text":"测试","engine":"baidu"}  
+Sun Feb 17 2019 00:24:01 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:24:01 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:24:01 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:24:01 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:24:01 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:24:03 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:24:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:24:03 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:24:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:24:04 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:24:04 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:24:04 GMT+0800 (中国标准时间): 192.168.191.1 /favicon.ico  
+Sun Feb 17 2019 00:34:46 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:34:46 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:34:46 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:34:46 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 00:34:47 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:34:47 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:34:51 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:34:51 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:34:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:34:51 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:34:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:34:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:34:59 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:34:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:34:59 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:34:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 00:35:43 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:35:43 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 00:35:43 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:35:43 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 00:35:44 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 00:35:44 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:42:31 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:42:31 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:42:31 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:42:31 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:42:31 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:42:58 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:42:58 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:42:58 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:42:58 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:42:58 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:43:02 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:43:02 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:43:02 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:43:02 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:43:03 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:43:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:43:34 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:43:35 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:43:35 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:43:35 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:43:35 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:43:47 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:43:47 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:43:47 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:43:47 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:43:48 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:43:48 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:45:40 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:45:40 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:45:40 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:45:40 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:45:40 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:45:42 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:45:42 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:45:42 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:45:42 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:45:43 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:45:43 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:47:32 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:47:32 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:47:32 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:47:32 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:47:32 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:47:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:47:33 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:47:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:47:33 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:47:34 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:47:34 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 00:47:51 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 00:47:51 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 00:47:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 00:47:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 00:47:51 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 00:47:52 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 00:47:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 00:47:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:47:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 00:47:53 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 00:47:53 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 01:12:46 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:12:46 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:12:46 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:12:46 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:12:46 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:12:48 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:12:48 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:12:48 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:12:48 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 01:12:49 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:12:49 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu"}  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:12:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:12:59 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:12:59 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:12:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:13:00 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:13:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:14:44 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:14:44 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:14:44 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:14:44 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:14:44 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:14:45 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:14:45 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:14:45 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:14:45 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 01:14:46 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:14:46 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu"}  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:15:03 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:15:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:15:03 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:15:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:15:04 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:15:04 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:16:14 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:16:14 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:16:14 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:16:14 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:16:14 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"This is a long sentence: for testing translation testing tools.","engine":"baidu"}  
+Sun Feb 17 2019 01:16:27 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:16:27 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:16:27 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:27 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"这是一个很长的句子： 用于测试翻译测试工具。","engine":"baidu"}  
+Sun Feb 17 2019 01:16:30 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:16:30 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:16:30 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:30 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"d","engine":"baidu"}  
+Sun Feb 17 2019 01:16:31 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:16:31 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:16:31 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:31 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:16:33 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:16:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:23:02 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:23:02 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:23:02 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:23:02 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:23:02 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:23:05 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:23:05 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:23:05 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:23:05 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:23:06 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:23:06 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:23:18 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:23:18 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:23:18 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:23:18 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:23:18 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:23:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:23:19 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:23:19 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:23:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:23:21 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:23:21 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:24:31 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:24:31 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:24:31 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:24:31 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:24:31 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:24:32 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:24:32 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:24:32 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:24:32 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:24:33 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:24:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:27:00 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:27:00 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:27:00 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:27:00 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:27:00 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:27:01 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:27:01 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:27:01 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:27:01 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:27:02 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:27:02 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:27:25 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:27:25 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:27:25 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:27:25 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:27:25 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:27:26 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:27:26 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:27:26 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:27:26 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:27:27 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:27:27 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:27:58 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:27:58 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:27:58 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:27:58 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:27:58 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:27:59 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:27:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:27:59 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:27:59 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:28:01 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:28:01 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:28:21 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:28:21 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:28:21 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:28:21 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:28:21 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:28:22 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:28:22 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:28:22 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:28:22 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:28:24 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:28:24 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:29:14 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:29:14 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:29:14 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:29:14 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:29:14 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:29:15 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:29:15 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:29:15 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:29:15 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:29:17 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:29:17 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:29:39 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:29:39 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:29:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:29:39 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:29:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:29:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:29:40 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:29:40 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:29:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:29:41 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:29:41 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:30:37 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:30:37 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:30:37 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:30:37 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:30:37 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:30:39 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:30:39 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:30:39 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:30:39 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:30:40 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:30:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:31:35 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:31:35 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:31:35 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:31:35 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:31:35 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:31:36 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:31:36 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:31:36 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:31:36 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:31:37 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:31:37 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:32:01 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:32:01 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:32:01 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:32:01 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:32:01 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:32:03 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:32:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:32:03 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:32:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:32:04 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:32:04 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:32:51 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:32:51 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:32:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:32:51 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:32:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:32:52 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:32:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:32:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:32:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:32:53 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:32:53 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:34:15 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:34:15 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:34:15 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:34:15 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:34:15 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:34:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:34:16 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:34:16 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:34:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:34:18 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:34:18 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:34:39 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:34:39 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"done","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:34:39 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:34:39 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"done","engine":"baidu"}  
+Sun Feb 17 2019 01:34:40 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:34:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"完成","engine":"baidu"}  
+Sun Feb 17 2019 01:37:04 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:37:05 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:37:05 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:37:05 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:37:05 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:37:06 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:37:06 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:37:06 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:06 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:37:07 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:37:07 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"done","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:37:13 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:37:13 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"done","engine":"baidu"}  
+Sun Feb 17 2019 01:37:14 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:14 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"完成","engine":"baidu"}  
+Sun Feb 17 2019 01:37:26 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:37:26 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:37:26 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:37:26 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:37:26 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:37:28 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:37:28 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:37:28 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:37:28 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:29 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:37:29 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:38:13 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:38:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"doing","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:38:13 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:38:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"doing","engine":"baidu"}  
+Sun Feb 17 2019 01:38:14 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:38:14 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:38:49 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:38:49 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:38:49 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:38:49 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:38:50 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:38:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:47:15 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:47:15 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:47:15 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:47:15 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:47:15 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:47:17 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:47:17 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:47:17 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:47:17 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:47:18 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:47:18 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:47:35 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:47:35 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"auto"}  
+Sun Feb 17 2019 01:47:35 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:47:35 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:47:49 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:47:49 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:47:49 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:47:49 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:47:49 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:47:50 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:47:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:47:50 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:47:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:47:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:47:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:48:06 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:48:06 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"auto"}  
+Sun Feb 17 2019 01:48:06 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:48:06 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:48:08 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:49:38 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:49:39 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:49:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:49:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:49:39 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:49:40 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:49:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:49:40 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:49:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:49:41 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:49:41 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:50:18 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:50:18 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:50:18 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:50:18 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:50:18 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:50:19 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:50:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:50:19 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:50:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:50:20 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:50:20 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:50:27 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:50:27 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:50:27 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:50:27 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"auto"}  
+Sun Feb 17 2019 01:50:36 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:50:36 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 01:50:36 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:50:36 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:50:37 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:50:37 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:52:45 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"google","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 01:52:45 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:53:23 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:53:23 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:53:23 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:53:23 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:53:23 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:53:33 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:53:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:53:33 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:53:33 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:53:35 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:53:35 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:58:59 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:58:59 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:58:59 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:58:59 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:58:59 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:59:00 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:59:00 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:59:01 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:01 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:59:07 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:07 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 01:59:07 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:07 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:59:08 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:08 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:59:12 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:12 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 01:59:12 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:12 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:59:13 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:59:49 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 01:59:49 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 01:59:49 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 01:59:49 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 01:59:49 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 01:59:50 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 01:59:50 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:59:51 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:51 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:59:53 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:53 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 01:59:53 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:53 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 01:59:54 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 01:59:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 01:59:58 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 01:59:58 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"google","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 02:00:00 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:00 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"google","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:03 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:03 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:03 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:00:09 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:09 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:09 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:09 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:00:10 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:10 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:10 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:10 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:00:19 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:00:19 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:00:19 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:00:19 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:00:19 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:00:20 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:20 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:20 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:20 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:00:21 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:21 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:00:23 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:23 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:23 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:23 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:00:25 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:00:25 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:00:25 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:00:25 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:01:37 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:37 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:01:37 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:01:37 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:01:39 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:01:39 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:01:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:01:39 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:01:39 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:01:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 02:01:40 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:40 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:01:40 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:01:41 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:01:41 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:01:47 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:47 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"google","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:01:50 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:50 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"google","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 02:01:54 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"google","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:01:57 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:01:57 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:01:57 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:01:57 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:03:51 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:03:51 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:03:51 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:03:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:03:51 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:03:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 02:03:52 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:03:52 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:03:52 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:03:54 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:03:54 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:03:55 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:03:55 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"zh-CN","to":"zh-CN"}  
+Sun Feb 17 2019 02:03:55 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:03:55 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:04:09 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:04:09 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:04:09 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:04:09 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:04:09 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:04:10 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:04:10 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 02:04:10 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:04:10 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:04:12 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:04:12 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:05:12 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:05:12 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:05:12 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:05:12 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:05:12 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:05:13 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:05:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","to":"zh-CN"}  
+Sun Feb 17 2019 02:05:13 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:05:13 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:14 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:14 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:05:16 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:05:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:05:16 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:16 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"youdao"}  
+Sun Feb 17 2019 02:05:19 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:05:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"youdao","from":"zh-CN","to":"en"}  
+Sun Feb 17 2019 02:05:19 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:19 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao"}  
+Sun Feb 17 2019 02:05:21 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:05:21 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"youdao","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:05:21 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:21 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"youdao"}  
+Sun Feb 17 2019 02:05:23 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:05:23 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu","from":"en","to":"zh-CN"}  
+Sun Feb 17 2019 02:05:23 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:23 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"do","engine":"baidu"}  
+Sun Feb 17 2019 02:05:24 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:05:24 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"做","engine":"baidu"}  
+Sun Feb 17 2019 02:06:32 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:06:33 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:06:33 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:06:33 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:06:33 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"给小饼干儿的翻译工具1.0","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"给小饼干儿的翻译工具1.0","engine":"baidu"}  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:06:34 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"Translation Tool for Biscuits 1.0","engine":"baidu"}  
+Sun Feb 17 2019 02:06:50 GMT+0800 (中国标准时间): 192.168.191.1 /  
+Sun Feb 17 2019 02:06:50 GMT+0800 (中国标准时间): 192.168.191.1 /reset.css  
+Sun Feb 17 2019 02:06:50 GMT+0800 (中国标准时间): 192.168.191.1 /LANGDICT.js  
+Sun Feb 17 2019 02:06:50 GMT+0800 (中国标准时间): 192.168.191.1 /index.js  
+Sun Feb 17 2019 02:06:50 GMT+0800 (中国标准时间): 192.168.191.1 /index.css  
+Sun Feb 17 2019 02:06:51 GMT+0800 (中国标准时间): 192.168.191.1 /translate  
+Sun Feb 17 2019 02:06:51 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"给饼干儿的翻译工具1.0","engine":"baidu","to":"en"}  
+Sun Feb 17 2019 02:06:51 GMT+0800 (中国标准时间): 192.168.191.1 /audio  
+Sun Feb 17 2019 02:06:51 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"给饼干儿的翻译工具1.0","engine":"baidu"}  
+Sun Feb 17 2019 02:06:53 GMT+0800 (中国标准时间): 192.168.191.1 translate params: {"text":"Translation Tool for Biscuits 1.0","engine":"baidu"}  
+Sun Feb 17 2019 02:06:53 GMT+0800 (中国标准时间): 192.168.191.1 /audio  

@@ -73,3 +73,16 @@ Sat Feb 16 2019 21:35:31 GMT+0800 (中国标准时间): audio error: Error
 Sat Feb 16 2019 21:37:13 GMT+0800 (中国标准时间): audio error: Error 
 Sat Feb 16 2019 21:37:16 GMT+0800 (中国标准时间): audio error: Error 
 Sat Feb 16 2019 21:37:22 GMT+0800 (中国标准时间): audio error: Error 
+Sun Feb 17 2019 00:34:47 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 00:35:00 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:12:52 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:12:53 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:15:00 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:16:28 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:47:35 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:48:06 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 01:50:27 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 02:01:38 GMT+0800 (中国标准时间): translate error: Error 
+Sun Feb 17 2019 02:05:16 GMT+0800 (中国标准时间): audio error: Error 
+Sun Feb 17 2019 02:05:21 GMT+0800 (中国标准时间): audio error: Error 

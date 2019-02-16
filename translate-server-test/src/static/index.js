@@ -22,11 +22,11 @@ var app = new Vue({
         label: "有道"
       }
     ],
-    searchString: "这是一个很长的句子： 用于测试翻译测试工具。",
+    searchString: "给饼干儿的翻译工具1.0",
     translateResult: null,
     sourceLang: { code: "auto", lang: "自动检测" },
     sourceLangList: [],
-    resultLang: { code: "en", lang: "英语" },
+    resultLang: { code: "en", lang: "嘤语" },
     resultLangList: [],
     getTsTimer: null,
     loadingTsFlag: false,
@@ -51,6 +51,51 @@ var app = new Vue({
     searchResult: function() {
       var result = this.translateResult;
       return result && result.result ? result.result.join(", ") : "";
+    },
+    word_name: function() {
+      if (this.simple_means) {
+        return this.simple_means.word_name || "";
+      }
+      return "";
+    },
+    simple_means: function() {
+      // 简明释义
+      return this.getChainProperty(this.translateResult, [
+        "raw",
+        "dict_result",
+        "simple_means"
+      ]);
+    },
+    word_parts: function() {
+      if (this.simple_means) {
+        var parts = this.simple_means.symbols;
+        if (Array.isArray(parts)) {
+          var res = [];
+          parts.forEach((item) => {
+            if (Array.isArray(item.parts)) {
+              res = res.concat(item.parts);
+            }
+          })
+          return res;
+        }
+      }
+      return [];
+    },
+    word_exchange: function() {
+      if (this.simple_means) {
+        var exc = this.simple_means.exchange;
+        if (exc) {
+          var res = [];
+          var dict = this.langDict.exchange;
+          Object.keys(exc).forEach((key) => {
+            if (Array.isArray(exc[key])) {
+              res.push({key: dict.codeToName(key), val: exc[key].join('; ')})
+            }
+          })
+          return res;
+        }
+      }
+      return [];
     },
     keywords: function() {
       // 重点词汇
@@ -81,8 +126,8 @@ var app = new Vue({
         this.getTsFn();
       }
     },
-    searchEngine: function (newVal) {
-      if (newVal === 'youdao') {
+    searchEngine: function(newVal) {
+      if (newVal === "youdao" && this.sourceLang.code === 'auto') {
         this.sourceLang = { code: "zh-CN", lang: "中文" };
       }
     }
@@ -121,6 +166,13 @@ var app = new Vue({
           // 对最后一个请求赋值
           if (timer === this.getTsTimer) {
             this.translateResult = res;
+            var dict = this.langDict.google;
+            if (res.from) {
+              this.sourceLang = {code: res.from, lang: dict.codeToName(res.from)};
+            }
+            if (res.to) {
+              this.resultLang = {code: res.to, lang: dict.codeToName(res.to)};
+            }
             this.searchEngine !== "google" && this.getAudioUri("result");
           }
         })

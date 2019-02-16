@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./reset.css" />
     <link rel="stylesheet" type="text/css" href="./index.css" />
     <!-- import Vue.js -->
-    <script src="//vuejs.org/js/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.4/vue.js"></script>
     <!-- import stylesheet -->
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css" />
     <!-- import iView -->
@@ -140,31 +140,41 @@
       </section>
 
       <div class="more-result-box">
+        <div class="more-result-box-right pl4 pr8">
+          <card v-show="word_parts.length > 0" class="result-card">
+            <span slot="title">简明释义</span>
+            <p class="font-bold font-16">{{ word_name }}</p>
+            <p class="card-item" v-for="item in word_parts">
+              <span class="card-key color-888683 font-12">{{ item.part }}</span
+              >&nbsp;&nbsp;
+              <span class="card-val">{{ item.means.join("; ") }}</span>
+            </p>
+            <br>
+            <p>
+              <span v-for="item in word_exchange">
+                <span>{{ item.key }}: <a @click.stop="searchString = item.val">{{ item.val }}</a></span
+                >&nbsp;&nbsp;
+              </span>
+            </p>
+          </card>
+          <!-- <card class="result-card">
+                <span slot="title">The standard card</span>
+                <p>Content of card</p>
+                <p>Content of card</p>
+                <p>Content of card</p>
+              </card> -->
+        </div>
         <div class="more-result-box-left pl8 pr4">
           <card v-show="keywords" class="result-card">
             <span slot="title">重点词汇</span>
             <p class="card-item" v-for="item in keywords">
-              <a @click="searchString = item.word" class="card-key">{{
+              <a @click.stop="searchString = item.word" class="card-key">{{
                 item.word
               }}</a
               >&nbsp;&nbsp;
               <span class="card-val">{{ item.means.join("; ") }}</span>
             </p>
           </card>
-          <!-- <card class="result-card">
-            <span slot="title">The standard card</span>
-            <p>Content of card</p>
-            <p>Content of card</p>
-            <p>Content of card</p>
-          </card>
-          <card class="result-card">
-            <span slot="title">The standard card</span>
-            <p>Content of card</p>
-            <p>Content of card</p>
-            <p>Content of card</p>
-          </card> -->
-        </div>
-        <div class="more-result-box-right pl4 pr8">
           <!-- <card class="result-card">
             <span slot="title">The standard card</span>
             <p>Content of card</p>
