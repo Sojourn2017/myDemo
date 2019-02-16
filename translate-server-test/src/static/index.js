@@ -2,7 +2,11 @@ var app = new Vue({
   el: "#app",
   data: {
     langDict: {},
-    normalLang: [{ code: "zh", lang: "中文" }, { code: "en", lang: "英语" }],
+    normalLang: [
+      { code: "auto", lang: "自动检测" },
+      { code: "zh-CN", lang: "中文" },
+      { code: "en", lang: "英语" }
+    ],
     searchEngine: "baidu",
     searchEngineList: [
       {
@@ -20,7 +24,7 @@ var app = new Vue({
     ],
     searchString: "这是一个很长的句子： 用于测试翻译测试工具。",
     translateResult: null,
-    sourceLang: { code: "zh", lang: "中文" },
+    sourceLang: { code: "auto", lang: "自动检测" },
     sourceLangList: [],
     resultLang: { code: "en", lang: "英语" },
     resultLangList: [],
@@ -29,9 +33,21 @@ var app = new Vue({
     sourceAudioUri: "",
     resultAudioUri: "",
     selectLangFlag: false,
-    selectLangType: '',
+    selectLangType: ""
   },
   computed: {
+    normalLangFormat: function() {
+      if (this.searchEngine === "youdao") {
+        return this.normalLang.slice(1);
+      } else {
+        if (this.selectLangType === "source") {
+          return this.normalLang;
+        } else if (this.selectLangType === "result") {
+          return this.normalLang.slice(1);
+        }
+      }
+      return [];
+    },
     searchResult: function() {
       var result = this.translateResult;
       return result && result.result ? result.result.join(", ") : "";
@@ -64,6 +80,11 @@ var app = new Vue({
       } else {
         this.getTsFn();
       }
+    },
+    searchEngine: function (newVal) {
+      if (newVal === 'youdao') {
+        this.sourceLang = { code: "zh-CN", lang: "中文" };
+      }
     }
   },
   created: function() {
@@ -88,10 +109,12 @@ var app = new Vue({
       }
       var timer = this.getTsTimer;
       this.loadingTsFlag = true;
+      var params = {};
       this.postData("./translate", {
         text: this.searchString,
         engine: this.searchEngine,
-        form: this.sourceLang.code,
+        from:
+          this.sourceLang.code === "auto" ? undefined : this.sourceLang.code,
         to: this.resultLang.code
       })
         .then(res => {
@@ -126,11 +149,17 @@ var app = new Vue({
           this.showMsg(err, "error");
         });
     },
-    selectLang: function (item) {
+    selectLang: function(item) {
       if (this.selectLangType === "source") {
-        this.sourceLang = item
+        this.sourceLang = item;
+        this.searchEngine === "youdao" &&
+          item.code !== "zh-CN" &&
+          (this.resultLang = { code: "zh-CN", lang: "中文" });
       } else if (this.selectLangType === "result") {
         this.resultLang = item;
+        this.searchEngine === "youdao" &&
+          item.code !== "zh-CN" &&
+          (this.sourceLang = { code: "zh-CN", lang: "中文" });
       }
       this.selectLangFlag = false;
       this.getTsFn();

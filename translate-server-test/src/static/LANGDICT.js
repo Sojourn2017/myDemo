@@ -136,7 +136,17 @@ window.LD = {
     { code: "zh-TW", lang: "中文(繁体)" }
   ],
   youdao: [
-    { code: "zh-CN", lang: "中文(简体)" },
+    { code: "en", lang: "英语" },
+    { code: "jp", lang: "日语" },
+    { code: "ko", lang: "韩语" },
+    { code: "fr", lang: "法语" },
+    { code: "de", lang: "德语" },
+    { code: "ru", lang: "俄语" },
+    { code: "es", lang: "西班牙语" },
+    { code: "pt", lang: "葡萄牙语(葡萄牙、巴西)" },
+    { code: "vi", lang: "越南语" },
+    { code: "id", lang: "印度尼西亚语" },
+    { code: "ar", lang: "阿拉伯语" },
   ]
 };
 

@@ -50,7 +50,7 @@ API["/translate"] = function(req, res) {
     writeLog(`${getClientIP(req)} translate params: ${str} `);
 
     let params = JSON.parse(str);
-
+    
     let queryResult = {};
     try {
       await ts
