@@ -67,19 +67,29 @@ var app = new Vue({
       ]);
     },
     word_parts: function() {
-      if (this.simple_means) {
-        var parts = this.simple_means.symbols;
-        if (Array.isArray(parts)) {
-          var res = [];
-          parts.forEach((item) => {
-            if (Array.isArray(item.parts)) {
-              res = res.concat(item.parts);
-            }
-          })
-          return res;
+      var res = [];
+      if (this.sourceLang.code === 'en') {
+        if (this.simple_means) {
+          var parts = this.simple_means.symbols;
+          if (Array.isArray(parts)) {
+            parts.forEach((item) => {
+              if (Array.isArray(item.parts)) {
+                res = res.concat(item.parts);
+              }
+            })
+          }
+        }
+      } else {
+        var tag = this.getChainProperty(this.translateResult, [
+          "raw",
+          "liju_result",
+          "tag"
+        ]);
+        if (Array.isArray(tag)) {
+          res.push({part: '', means: tag})
         }
       }
-      return [];
+      return res;
     },
     word_exchange: function() {
       if (this.simple_means) {

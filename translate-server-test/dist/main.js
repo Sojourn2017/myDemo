@@ -3294,7 +3294,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./server */ \"./src/server.js\");\n\nconst server = Object(_server__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _server_50010__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./server-50010 */ \"./src/server-50010.js\");\n\nconst server = Object(_server_50010__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 
@@ -3310,15 +3310,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 
 /***/ }),
 
-/***/ "./src/server.js":
-/*!***********************!*\
-  !*** ./src/server.js ***!
-  \***********************/
+/***/ "./src/server-50010.js":
+/*!*****************************!*\
+  !*** ./src/server-50010.js ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Server; });\n/* harmony import */ var _router_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router/api */ \"./src/router/api.js\");\n/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! http */ \"http\");\n/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(http__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! url */ \"url\");\n/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _util_writeLog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/writeLog */ \"./src/util/writeLog.js\");\n/* harmony import */ var _util_getClientIP__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/getClientIP */ \"./src/util/getClientIP.js\");\n/* harmony import */ var _util_handleStatic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/handleStatic */ \"./src/util/handleStatic.js\");\n\n\n\n\n\n\nfunction Server() {\n  http__WEBPACK_IMPORTED_MODULE_1___default.a.createServer((req, res) => {\n    // 写日志\n    Object(_util_writeLog__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(`${Object(_util_getClientIP__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(req)} ${req.url} `);\n    let pathName = url__WEBPACK_IMPORTED_MODULE_2___default.a.parse(req.url).pathname.toLocaleLowerCase(); // 判断静态资源\n\n    var fileType = Object(_util_handleStatic__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(pathName);\n\n    if (fileType) {\n      _router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"]['/'](req, res, pathName, fileType);\n    } else if (_router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"][pathName]) {\n      _router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"][pathName](req, res);\n    } else {\n      res.writeHead(404, {\n        \"content-type\": `application/json`\n      });\n      res.end(\"404 Not Found\");\n    }\n  }).listen(50010, \"0.0.0.0\", () => {\n    console.log(\"server running at port 50010\");\n  });\n}\n\n//# sourceURL=webpack:///./src/server.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Server; });\n/* harmony import */ var _router_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./router/api */ \"./src/router/api.js\");\n/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! http */ \"http\");\n/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(http__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! url */ \"url\");\n/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _util_writeLog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/writeLog */ \"./src/util/writeLog.js\");\n/* harmony import */ var _util_getClientIP__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/getClientIP */ \"./src/util/getClientIP.js\");\n/* harmony import */ var _util_handleStatic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/handleStatic */ \"./src/util/handleStatic.js\");\n\n\n\n\n\n\nfunction Server() {\n  http__WEBPACK_IMPORTED_MODULE_1___default.a.createServer((req, res) => {\n    // 写日志\n    Object(_util_writeLog__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(`${Object(_util_getClientIP__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(req)} ${req.url} `);\n    let pathName = url__WEBPACK_IMPORTED_MODULE_2___default.a.parse(req.url).pathname.toLocaleLowerCase(); // 判断静态资源\n\n    var fileType = Object(_util_handleStatic__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(pathName);\n\n    if (fileType) {\n      _router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"]['/'](req, res, pathName, fileType);\n    } else if (_router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"][pathName]) {\n      _router_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"][pathName](req, res);\n    } else {\n      res.writeHead(404, {\n        \"content-type\": `application/json`\n      });\n      res.end(\"404 Not Found\");\n    }\n  }).listen(50010, \"0.0.0.0\", () => {\n    console.log(\"server running at port 50010\");\n  });\n}\n\n//# sourceURL=webpack:///./src/server-50010.js?");
 
 /***/ }),
 
@@ -3342,7 +3342,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleStatic; });\nconst MIME = {\n  'html': 'text/html',\n  'css': 'text/css',\n  'js': 'application/x-javascript',\n  'png': 'image/png',\n  'jpg': 'image/jpeg',\n  'gif': 'image/gif'\n};\nfunction handleStatic(pathName) {\n  let reg = /\\.([a-z]*)$/;\n\n  if (reg.test(pathName)) {\n    let type = RegExp.$1;\n    return MIME[type];\n  }\n}\n\n//# sourceURL=webpack:///./src/util/handleStatic.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return handleStatic; });\nconst MIME = {\n  'html': 'text/html',\n  'css': 'text/css',\n  'js': 'application/x-javascript',\n  'png': 'image/png',\n  'jpg': 'image/jpeg',\n  'gif': 'image/gif'\n};\nfunction handleStatic(pathName) {\n  let reg = /\\.([a-zA-Z]*)$/;\n\n  if (reg.test(pathName)) {\n    let type = RegExp.$1;\n    return MIME[type];\n  }\n}\n\n//# sourceURL=webpack:///./src/util/handleStatic.js?");
 
 /***/ }),
 

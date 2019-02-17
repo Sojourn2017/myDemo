@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css" />
     <!-- import iView -->
     <script src="//unpkg.com/iview/dist/iview.min.js"></script>
-    <script src="./LANGDICT.js"></script>
   </head>
   <body>
     <section id="app" v-cloak>
@@ -145,14 +144,27 @@
             <span slot="title">简明释义</span>
             <p class="font-bold font-16">{{ word_name }}</p>
             <p class="card-item" v-for="item in word_parts">
-              <span class="card-key color-888683 font-12">{{ item.part }}</span
-              >&nbsp;&nbsp;
-              <span class="card-val">{{ item.means.join("; ") }}</span>
+              <span v-if="sourceLang.code === 'en'">
+                <span class="card-key color-888683 font-12">{{
+                  item.part
+                }}</span
+                >&nbsp;&nbsp;
+                <span class="card-val">{{ item.means.join("; ") }}</span>
+              </span>
+              <span v-else>
+                  <a v-for="word in item.means" @click.stop="(sourceLang.code = 'en') && (resultLang.code = 'zh-CN') && (searchString = word)">{{
+                      word
+                    }};&nbsp;&nbsp;</a>
+              </span>
             </p>
-            <br>
+            <br />
             <p>
               <span v-for="item in word_exchange">
-                <span>{{ item.key }}: <a @click.stop="searchString = item.val">{{ item.val }}</a></span
+                <span
+                  >{{ item.key }}:
+                  <a @click.stop="searchString = item.val">{{
+                    item.val
+                  }}</a></span
                 >&nbsp;&nbsp;
               </span>
             </p>
@@ -192,7 +204,7 @@
 
       <p id="ts-result"></p>
     </section>
-
+    <script src="./langdict.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

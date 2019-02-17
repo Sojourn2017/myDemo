@@ -8,7 +8,7 @@ const MIME = {
 }
 
 export default function handleStatic(pathName) {
-  let reg = /\.([a-z]*)$/;
+  let reg = /\.([a-zA-Z]*)$/;
   if (reg.test(pathName)) {
     let type = RegExp.$1;
     return MIME[type];
