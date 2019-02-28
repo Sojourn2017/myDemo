@@ -73,3 +73,7 @@ typings/
 
 # Serverless directories
 .serverless
+
+# conf
+.vscode
+.vscode/*
